@@ -1,5 +1,4 @@
 import Layout from '../components/template/Layout';
-import useAppData from '../data/hook/useAppData';
 
 export default function Home() {
   return (
@@ -7,7 +6,7 @@ export default function Home() {
       title="Página Inicial"
       subtitle="Estamos construindo uma aplicação de encomendas"
     >
-      <h3>Conteúdo</h3>
+      <h3>Página Inicial</h3>
     </Layout>
   );
 }
