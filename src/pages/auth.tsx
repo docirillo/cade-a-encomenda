@@ -1,34 +1,58 @@
 import { useState } from 'react';
 import AuthInput from '../components/auth/AuthInput';
+import Image from 'next/image';
+import logo from '../../public/logo.png';
+import { IconWarning } from '../components/icons';
 
 export default function Auth() {
+  const [error, setError] = useState(null);
   const [mode, setMode] = useState<'login' | 'register'>('login');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  function showError(msg, timerInSeconds = 5) {
+    setError(msg);
+    setTimeout(() => setError(null), timerInSeconds * 1000);
+  }
+
   function submit() {
     if (mode === 'login') {
       console.log('login');
+      showError('Ocorreu um erro no login!');
     } else {
       console.log('cadastrar');
+      showError('Ocorreu um erro no cadastro!');
     }
   }
 
   return (
     <div className="flex h-screen items-center justify-center">
-      <div className="hidden md:block md:w1/2 lg:w-2/3">
-        <img
-          src="https://source.unsplash.com/random"
+      <div className="hidden md:block md:w1/3 lg:w-1/3">
+        <Image
+          src={logo}
           alt="Authentication Logo Image"
           className="h-screen w-full object-cover"
+          width={900}
+          height={900}
         />
       </div>
-      <div className="m-10 md:w-1/2 w-full lg:w-1/3">
+      <div className="m-10 md:w-2/3 w-full lg:w-1/3">
         <h1 className={`text-3xl font-bold mb-5`}>
           {mode === 'login'
             ? 'Entre com a sua Conta'
             : 'Cadastre-se no Cadê minha Encomenda?'}
         </h1>
+        {error ? (
+          <div
+            className={`flex items-center bg-red-400 text-white py-3 px-5 my-2 border border-red-700 rounded-lg`}
+          >
+            {IconWarning(7)}
+            <span className="ml-3">{error}</span>
+          </div>
+        ) : (
+          false
+        )}
+
         <AuthInput
           label="E-mail"
           type="email"
@@ -46,7 +70,7 @@ export default function Auth() {
 
         <button
           onClick={submit}
-          className={`w-full bg-indigo-500 hover: bg-indigo-400 text-white rounded-lg px-4 py-3 mt-6`}
+          className={`w-full bg-indigo-500 hover:bg-indigo-400 text-white rounded-lg px-4 py-3 mt-6`}
         >
           {mode === 'login' ? 'Entrar' : 'Cadastrar'}
         </button>
@@ -54,7 +78,7 @@ export default function Auth() {
         <hr className="my-6 border-gray-300 w-full" />
         <button
           onClick={submit}
-          className={`w-full bg-red-500 hover: bg-red-400 text-white rounded-lg px-4 py-3`}
+          className={`w-full bg-red-500 hover:bg-red-400 text-white rounded-lg px-4 py-3`}
         >
           Entrar com Google
         </button>
