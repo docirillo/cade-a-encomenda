@@ -7,6 +7,7 @@ import User from '../../model/User';
 interface AuthContextProps {
   user?: User;
   loginGoogle?: () => Promise<void>;
+  logout?: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextProps>({});
@@ -57,16 +58,34 @@ export function AuthProvider(props) {
   }
 
   async function loginGoogle() {
-    const response = await firebase
-      .auth()
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    setSession(response.user);
-    route.push('/');
+    try {
+      setLoading(true);
+      const response = await firebase
+        .auth()
+        .signInWithPopup(new firebase.auth.GoogleAuthProvider());
+      setSession(response.user);
+      route.push('/');
+    } finally {
+      setLoading(false);
+    }
   }
 
+  async function logout() {
+    try {
+      setLoading(true);
+      await firebase.auth().signOut();
+      await setSession(null);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  //confirmando que o cookie está true, válido e presente
   useEffect(() => {
-    const cancel = firebase.auth().onIdTokenChanged(setSession);
-    return () => cancel();
+    if (Cookies.get('cade-a-encomenda-auth')) {
+      const cancel = firebase.auth().onIdTokenChanged(setSession);
+      return () => cancel();
+    }
   }, []);
 
   return (
@@ -74,6 +93,7 @@ export function AuthProvider(props) {
       value={{
         user,
         loginGoogle,
+        logout,
       }}
     >
       {props.children}
