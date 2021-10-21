@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import AuthInput from '../components/auth/AuthInput';
 import Image from 'next/image';
-import logo from '../../public/logo.png';
+import logo from '../../public/images/logo.png';
 import { IconWarning } from '../components/icons';
 import useAuth from '../data/hook/useAuth';
 
