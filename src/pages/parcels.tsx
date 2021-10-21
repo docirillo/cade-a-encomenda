@@ -6,7 +6,7 @@ export default function Parcels() {
       title="Parcels"
       subtitle="Estamos construindo uma aplicação de encomendas"
     >
-      <h3>Teste</h3>
+      <h3>Parcels</h3>
     </Layout>
   );
 }

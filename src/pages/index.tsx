@@ -3,10 +3,10 @@ import Layout from '../components/template/Layout';
 export default function Home() {
   return (
     <Layout
-      title="Página Inicial"
+      title="Home"
       subtitle="Estamos construindo uma aplicação de encomendas"
     >
-      <h3>Página Inicial</h3>
+      <h3>Main Content</h3>
     </Layout>
   );
 }

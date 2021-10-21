@@ -6,7 +6,7 @@ export default function Settings() {
       title="Settings"
       subtitle="Estamos construindo uma aplicação de encomendas"
     >
-      <h3>Conteúdo</h3>
+      <h3>Settings</h3>
     </Layout>
   );
 }
