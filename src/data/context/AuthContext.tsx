@@ -7,7 +7,9 @@ import User from '../../model/User';
 interface AuthContextProps {
   user?: User;
   loading?: boolean;
+  register?: (email: string, password: string) => Promise<void>;
   loginGoogle?: () => Promise<void>;
+  login?: (email: string, password: string) => Promise<void>;
   logout?: () => Promise<void>;
 }
 
@@ -57,20 +59,48 @@ export function AuthProvider(props) {
       return false;
     }
   }
-
-  async function loginGoogle() {
+  //autenticacao com email e senha
+  async function login(email, password) {
     try {
       setLoading(true);
       const response = await firebase
         .auth()
-        .signInWithPopup(new firebase.auth.GoogleAuthProvider());
-      setSession(response.user);
+        .signInWithEmailAndPassword(email, password);
+      await setSession(response.user);
       route.push('/');
     } finally {
       setLoading(false);
     }
   }
 
+  //metodo de cadastrar usuario
+  async function register(email, password) {
+    try {
+      setLoading(true);
+      const response = await firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password);
+      await setSession(response.user);
+      route.push('/');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  //autenticacao com login do Google
+  async function loginGoogle() {
+    try {
+      setLoading(true);
+      const response = await firebase
+        .auth()
+        .signInWithPopup(new firebase.auth.GoogleAuthProvider());
+      await setSession(response.user);
+      route.push('/');
+    } finally {
+      setLoading(false);
+    }
+  }
+  //realizando logout da aplicacao
   async function logout() {
     try {
       setLoading(true);
@@ -96,6 +126,8 @@ export function AuthProvider(props) {
       value={{
         user,
         loading,
+        login,
+        register,
         loginGoogle,
         logout,
       }}

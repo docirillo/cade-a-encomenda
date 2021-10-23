@@ -6,7 +6,7 @@ import { IconWarning } from '../components/icons';
 import useAuth from '../data/hook/useAuth';
 
 export default function Auth() {
-  const { user, loginGoogle } = useAuth();
+  const { register, login, loginGoogle } = useAuth();
 
   const [error, setError] = useState(null);
   const [mode, setMode] = useState<'login' | 'register'>('login');
@@ -18,13 +18,15 @@ export default function Auth() {
     setTimeout(() => setError(null), timerInSeconds * 1000);
   }
 
-  function submit() {
-    if (mode === 'login') {
-      console.log('login');
-      showError('Ocorreu um erro no login!');
-    } else {
-      console.log('cadastrar');
-      showError('Ocorreu um erro no cadastro!');
+  async function submit() {
+    try {
+      if (mode === 'login') {
+        await login(email, password);
+      } else {
+        await register(email, password);
+      }
+    } catch (e) {
+      showError(e?.message ?? 'Unexpected Error');
     }
   }
 
