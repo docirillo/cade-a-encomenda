@@ -6,6 +6,7 @@ import User from '../../model/User';
 
 interface AuthContextProps {
   user?: User;
+  loading?: boolean;
   loginGoogle?: () => Promise<void>;
   logout?: () => Promise<void>;
 }
@@ -85,6 +86,8 @@ export function AuthProvider(props) {
     if (Cookies.get('cade-a-encomenda-auth')) {
       const cancel = firebase.auth().onIdTokenChanged(setSession);
       return () => cancel();
+    } else {
+      setLoading(false);
     }
   }, []);
 
@@ -92,6 +95,7 @@ export function AuthProvider(props) {
     <AuthContext.Provider
       value={{
         user,
+        loading,
         loginGoogle,
         logout,
       }}
