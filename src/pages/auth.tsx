@@ -3,7 +3,7 @@ import AuthInput from '../components/auth/AuthInput';
 import Image from 'next/image';
 import logo from '../../public/images/logo.png';
 import { IconWarning } from '../components/icons';
-import useAuth from '../data/hook/useAuth';
+import useAuth from '../data/hooks/useAuth';
 
 export default function Auth() {
   const { register, login, loginGoogle } = useAuth();

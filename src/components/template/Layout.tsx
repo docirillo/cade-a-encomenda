@@ -1,4 +1,4 @@
-import useAppData from '../../data/hook/useAppData';
+import useAppData from '../../data/hooks/useAppData';
 import ForceAuth from '../auth/ForceAuth';
 import Content from './Content';
 import Header from './Header';

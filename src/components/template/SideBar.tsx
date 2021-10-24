@@ -1,4 +1,4 @@
-import useAuth from '../../data/hook/useAuth';
+import useAuth from '../../data/hooks/useAuth';
 import { IconHome, IconLogout, IconRegister, IconSettings } from '../icons';
 import Logo from './Logo';
 import MenuItem from './MenuItem';

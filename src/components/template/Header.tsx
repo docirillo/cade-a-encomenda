@@ -1,4 +1,4 @@
-import useAppData from '../../data/hook/useAppData';
+import useAppData from '../../data/hooks/useAppData';
 import ChangeThemeButton from './ChangeThemeButton';
 import Title from './Title';
 import UserAvatar from './UserAvatar';
