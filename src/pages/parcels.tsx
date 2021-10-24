@@ -6,6 +6,9 @@ import Layout from '../components/template/Layout';
 import Parcel from '../core/Parcel';
 
 export default function Parcels() {
+  const [parcel, setParcel] = useState(Parcel.emptyParcel());
+  const [visible, setVisible] = useState<'table' | 'form'>('table');
+
   const parcels = [
     new Parcel(
       'Morador 1',
@@ -47,19 +50,23 @@ export default function Parcels() {
   ];
 
   function parcelSelected(parcel: Parcel) {
-    console.log(parcel.parcelName);
+    setParcel(parcel);
+    setVisible('form');
   }
 
   function parcelDeleted(parcel: Parcel) {
     console.log(`Excluir...${parcel.parcelName}`);
   }
 
+  function newParcel(parcel: Parcel) {
+    setParcel(Parcel.emptyParcel());
+    setVisible('form');
+  }
+
   function saveParcel(parcel: Parcel) {
     console.log(parcel);
     setVisible('table');
   }
-
-  const [visible, setVisible] = useState<'table' | 'form'>('table');
 
   return (
     <Layout
@@ -69,7 +76,7 @@ export default function Parcels() {
       {visible === 'table' ? (
         <>
           <div className="flex justify-end">
-            <NewParcelBtn className="mb-4" onClick={() => setVisible('form')}>
+            <NewParcelBtn className="mb-4 bg-yellow-500" onClick={newParcel}>
               New Parcel
             </NewParcelBtn>
           </div>
@@ -82,7 +89,7 @@ export default function Parcels() {
         </>
       ) : (
         <NewParcelForm
-          parcel={parcels[3]}
+          parcel={parcel}
           parcelChanged={saveParcel}
           cancelled={() => setVisible('table')}
         />
