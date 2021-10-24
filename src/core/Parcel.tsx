@@ -4,7 +4,7 @@ export default class Parcel {
   #parcelCode: string;
   #parcelBuilding: number;
   #parcelApartment: number;
-  #parcelIsDelivered: boolean;
+  #parcelIsDelivered: string;
   #parcelNote: string;
 
   constructor(
@@ -12,7 +12,7 @@ export default class Parcel {
     parcelCode: string,
     parcelBuilding: number,
     parcelApartment: number,
-    parcelIsDelivered: boolean,
+    parcelIsDelivered: string,
     parcelNote: string,
     parcelId: string = null,
   ) {
@@ -26,7 +26,7 @@ export default class Parcel {
   }
 
   static emptyParcel() {
-    return new Parcel('', '', 0, 0, false, '');
+    return new Parcel('', '', 0, 0, 'no', '');
   }
 
   get parcelId() {
