@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Parcel from '../../core/Parcel';
+import Parcel from '../../../core/Parcel';
 import InputParcel from './InputParcel';
-import NewParcelBtn from './NewParcelBtn';
+import NewParcelBtn from '../NewParcelBtn';
 
 interface NewParcelFormProps {
   parcel: Parcel;
