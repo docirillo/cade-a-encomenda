@@ -1,5 +1,4 @@
 interface NewParcelBtnProps {
-  color?: 'green' | 'blue' | 'gray';
   className?: string;
   children: any;
   onClick?: () => void;
