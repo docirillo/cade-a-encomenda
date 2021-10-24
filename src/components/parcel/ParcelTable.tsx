@@ -12,6 +12,7 @@ interface ParcelTableProps {
 
 export default function ParcelTable(props) {
   const showActions = props.parcelDeleted || props.parcelSelected;
+
   //funcao para renderizar o cabecalho da tabela
   function renderingHeader() {
     return (
@@ -101,7 +102,7 @@ export default function ParcelTable(props) {
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
             <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-              Delivered
+              {parcel.parcelIsDelivered}
             </span>
           </td>
           {showActions ? renderingActions(parcel) : false}

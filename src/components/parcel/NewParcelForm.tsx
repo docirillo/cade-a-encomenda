@@ -73,7 +73,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
 
       <div className="flex mt-7 justify-start">
         <NewParcelBtn
-          className="mr-2 bg-green-500"
+          className="mr-2 transition duration-500 ease-in-out bg-blue-500 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
           onClick={() =>
             props.parcelChanged?.(
               new Parcel(
@@ -90,7 +90,10 @@ export default function NewParcelForm(props: NewParcelFormProps) {
         >
           {parcelId ? 'Update' : 'Register'}{' '}
         </NewParcelBtn>
-        <NewParcelBtn className="mr-2 bg-red-500" onClick={props.cancelled}>
+        <NewParcelBtn
+          className="transition duration-500 ease-in-out bg-blue-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110"
+          onClick={props.cancelled}
+        >
           Cancel
         </NewParcelBtn>
       </div>

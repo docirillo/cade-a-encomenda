@@ -23,8 +23,11 @@ export default function Parcels() {
     >
       {tableVisible ? (
         <>
-          <div className="flex justify-end">
-            <NewParcelBtn className="mb-4 bg-yellow-500" onClick={newParcel}>
+          <div className="flex justify-start">
+            <NewParcelBtn
+              className="mb-4 transition duration-500 ease-in-out bg-blue-500 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
+              onClick={newParcel}
+            >
               New Parcel
             </NewParcelBtn>
           </div>
