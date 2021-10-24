@@ -1,3 +1,4 @@
+import NewParcelBtn from '../components/parcel/NewParcelBtn';
 import ParcelTable from '../components/parcel/ParcelTable';
 import Layout from '../components/template/Layout';
 import Parcel from '../core/Parcel';
@@ -56,6 +57,10 @@ export default function Parcels() {
       title="Parcels"
       subtitle="Estamos construindo uma aplicação de encomendas"
     >
+      <div className="flex justify-end">
+        <NewParcelBtn className="mb-4">New Parcel</NewParcelBtn>
+      </div>
+
       <ParcelTable
         parcels={parcels}
         parcelSelected={parcelSelected}
