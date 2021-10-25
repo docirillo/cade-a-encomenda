@@ -16,7 +16,7 @@ export default function ParcelTable(props) {
   //funcao para renderizar o cabecalho da tabela
   function renderingHeader() {
     return (
-      <tr className="dark:bg-gray-700">
+      <tr className="dark:bg-gray-700 dark:text-purple-200">
         <th
           scope="col"
           className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -61,7 +61,9 @@ export default function ParcelTable(props) {
         <tr
           key={parcel.parcelCode}
           className={`${
-            i % 2 === 0 ? 'bg-white dark:bg-gray-700' : 'bg-gray-100'
+            i % 2 === 0
+              ? 'bg-white dark:bg-gray-700'
+              : 'bg-gray-100 dark:bg-gray-600'
           }`}
         >
           <td className="px-6 py-4 whitespace-nowrap">
@@ -70,10 +72,10 @@ export default function ParcelTable(props) {
                 <Image className="h-10 w-10 rounded-full" src={avatar} alt="" />
               </div>
               <div className="ml-4">
-                <div className="text-sm font-medium text-gray-900">
+                <div className="text-sm dark:text-gray-100 font-medium text-gray-900">
                   {parcel.parcelName}
                 </div>
-                <div className="text-sm text-gray-500 dark:text-indigo-100">
+                <div className="text-sm text-gray-500 dark:text-gray-100">
                   <span>Contato do Morador</span>
                 </div>
               </div>
@@ -89,10 +91,10 @@ export default function ParcelTable(props) {
                 />
               </div>
               <div className="ml-4">
-                <div className="text-sm font-medium text-gray-900">
+                <div className="text-sm font-medium dark:text-gray-100 text-gray-900">
                   {parcel.parcelCode}
                 </div>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm dark:text-gray-100 text-gray-500">
                   <span>Bloco: {parcel.parcelBuilding} </span>
                   <span>Apto: {parcel.parcelApartment} </span>
                 </div>
@@ -100,12 +102,14 @@ export default function ParcelTable(props) {
             </div>
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
-            <div className="text-sm text-gray-900">{parcel.parcelNote}</div>
+            <div className="text-sm dark:text-gray-100 text-gray-900">
+              {parcel.parcelNote}
+            </div>
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
-            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+            <div className="text-sm dark:text-gray-100 text-gray-900">
               {parcel.parcelIsDelivered}
-            </span>
+            </div>
           </td>
           {showActions ? renderingActions(parcel) : false}
         </tr>
@@ -119,7 +123,7 @@ export default function ParcelTable(props) {
         {props.parcelSelected ? (
           <button
             onClick={() => props.parcelSelected?.(parcel)}
-            className={`flex justify-center items-center text-blue-600 rounded-full hover:bg-blue-100 p-2 m-1`}
+            className={`flex justify-center items-center text-blue-600 dark:text-blue-600 rounded-full hover:bg-blue-100 p-2 m-1`}
           >
             {IconEdit}
           </button>

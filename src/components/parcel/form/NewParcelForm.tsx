@@ -29,14 +29,14 @@ export default function NewParcelForm(props: NewParcelFormProps) {
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="mt-5 md:mt-0 md:col-span-2">
             <div className="shadow overflow-hidden sm:rounded-md">
-              <div className="px-4 py-5 bg-white sm:p-6">
+              <div className="px-4 py-5 bg-white dark:bg-purple-900 sm:p-6">
                 <div className="grid grid-cols-6 gap-6">
                   <div className="col-span-6 sm:col-span-3">
                     <InputParcel
                       text="Nome na Encomenda"
                       value={parcelName}
                       valueChanged={setParcelName}
-                      className="mt-1 text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
+                      className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
 
@@ -45,7 +45,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                       text="Código da Encomenda"
                       value={parcelCode}
                       valueChanged={setParcelCode}
-                      className="mt-1 text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
+                      className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
 
@@ -55,7 +55,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                       type="number"
                       value={parcelBuilding}
                       valueChanged={setParcelBuilding}
-                      className="mt-1 text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
+                      className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
 
@@ -65,7 +65,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                       type="number"
                       value={parcelApartment}
                       valueChanged={setParcelApartment}
-                      className="mt-1 text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
+                      className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
 
@@ -75,7 +75,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                       type="text"
                       value={parcelIsDelivered}
                       valueChanged={setParcelIsDelivered}
-                      className="mt-1 text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
+                      className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
 
@@ -84,14 +84,14 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                       text="Observações"
                       value={parcelNote}
                       valueChanged={setParcelNote}
-                      className="mt-1 text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
+                      className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
                     />
                   </div>
                 </div>
               </div>
-              <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+              <div className="px-4 py-3 dark:bg-purple-800 bg-gray-50 text-center sm:px-6">
                 <NewParcelBtn
-                  className="mr-2 transition duration-500 ease-in-out bg-blue-500 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
+                  className="mr-2 transition duration-500 ease-in-out bg-purple-900 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
                   onClick={() =>
                     props.parcelChanged?.(
                       new Parcel(
@@ -109,7 +109,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                   {parcelId ? 'Atualizar' : 'Incluir'}{' '}
                 </NewParcelBtn>
                 <NewParcelBtn
-                  className="transition duration-500 ease-in-out bg-blue-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110"
+                  className="transition duration-500 ease-in-out bg-purple-900 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110"
                   onClick={props.cancelled}
                 >
                   Cancelar
