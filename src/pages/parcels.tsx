@@ -22,7 +22,7 @@ export default function Parcels() {
         <>
           <div className="flex justify-start">
             <NewParcelBtn
-              className="mb-4 transition duration-500 ease-in-out bg-purple-500 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
+              className="mb-4 ml-4 transition duration-500 ease-in-out bg-purple-500 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
               onClick={newParcel}
             >
               Nova Encomenda

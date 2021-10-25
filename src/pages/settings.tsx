@@ -3,10 +3,10 @@ import Layout from '../components/template/Layout';
 export default function Settings() {
   return (
     <Layout
-      title="Settings"
+      title="Configurações"
       subtitle="Estamos construindo uma aplicação de encomendas"
     >
-      <h3>Settings</h3>
+      <h3>Configurações</h3>
     </Layout>
   );
 }

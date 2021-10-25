@@ -3,10 +3,10 @@ import Layout from '../components/template/Layout';
 export default function Profile() {
   return (
     <Layout
-      title="Profile"
+      title="Perfil"
       subtitle="Estamos construindo uma aplicação de encomendas"
     >
-      <h1>Profile</h1>
+      <h1>Perfil</h1>
     </Layout>
   );
 }
