@@ -1,4 +1,3 @@
-import NewParcelBtn from '../components/parcel/NewParcelBtn';
 import Parcel from '../core/Parcel';
 import ParcelRepository from '../core/ParcelRepository';
 import firebase from '../firebase/config';
