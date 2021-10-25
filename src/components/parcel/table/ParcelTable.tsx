@@ -16,37 +16,37 @@ export default function ParcelTable(props) {
   //funcao para renderizar o cabecalho da tabela
   function renderingHeader() {
     return (
-      <tr>
+      <tr className="dark:bg-gray-700">
         <th
           scope="col"
-          className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
         >
-          Name
+          Nome na Encomenda
         </th>
         <th
           scope="col"
-          className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
         >
-          Parcel Code
+          Código da Encomenda
         </th>
         <th
           scope="col"
-          className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
         >
-          Note
+          Observações
         </th>
         <th
           scope="col"
-          className="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          className="dark:text-gray-100 px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
         >
-          Status
+          Entregue ao Responsável?
         </th>
         {showActions ? (
           <th
             scope="col"
-            className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
+            className="dark:text-gray-100 px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
           >
-            Actions
+            Ações
           </th>
         ) : (
           false
@@ -60,7 +60,9 @@ export default function ParcelTable(props) {
       return (
         <tr
           key={parcel.parcelCode}
-          className={`${i % 2 === 0 ? 'bg-white' : 'bg-gray-100'}`}
+          className={`${
+            i % 2 === 0 ? 'bg-white dark:bg-gray-700' : 'bg-gray-100'
+          }`}
         >
           <td className="px-6 py-4 whitespace-nowrap">
             <div className="flex items-center">
@@ -71,7 +73,7 @@ export default function ParcelTable(props) {
                 <div className="text-sm font-medium text-gray-900">
                   {parcel.parcelName}
                 </div>
-                <div className="text-sm text-gray-500">
+                <div className="text-sm text-gray-500 dark:text-indigo-100">
                   <span>Contato do Morador</span>
                 </div>
               </div>
@@ -91,8 +93,8 @@ export default function ParcelTable(props) {
                   {parcel.parcelCode}
                 </div>
                 <div className="text-sm text-gray-500">
-                  <span>Building: {parcel.parcelBuilding} </span>
-                  <span>Apt: {parcel.parcelApartment} </span>
+                  <span>Bloco: {parcel.parcelBuilding} </span>
+                  <span>Apto: {parcel.parcelApartment} </span>
                 </div>
               </div>
             </div>

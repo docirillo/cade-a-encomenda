@@ -17,10 +17,7 @@ export default function Parcels() {
   } = useParcels();
 
   return (
-    <Layout
-      title="Parcels"
-      subtitle="Estamos construindo uma aplicação de encomendas"
-    >
+    <Layout title="Encomendas" subtitle="Consulte e Cadastre Novas Encomendas">
       {tableVisible ? (
         <>
           <div className="flex justify-start">
@@ -28,7 +25,7 @@ export default function Parcels() {
               className="mb-4 transition duration-500 ease-in-out bg-blue-500 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
               onClick={newParcel}
             >
-              New Parcel
+              Nova Encomenda
             </NewParcelBtn>
           </div>
 

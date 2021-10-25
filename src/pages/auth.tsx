@@ -45,7 +45,7 @@ export default function Auth() {
         <h1 className={`text-3xl font-bold mb-5`}>
           {mode === 'login'
             ? 'Entre com a sua Conta'
-            : 'Cadastre-se no Cadê minha Encomenda?'}
+            : 'Cadastre-se no Cadê a Encomenda?'}
         </h1>
         {error ? (
           <div

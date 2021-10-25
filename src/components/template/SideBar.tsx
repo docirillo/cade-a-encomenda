@@ -16,12 +16,12 @@ export default function SideBar() {
       </div>
       <ul className="flex-grow">
         <MenuItem url="/" text="Home" icon={IconHome} />
-        <MenuItem url="/parcels" text="Parcels" icon={IconRegister} />
-        <MenuItem url="/settings" text="Settings" icon={IconSettings} />
+        <MenuItem url="/parcels" text="Encomendas" icon={IconRegister} />
+        <MenuItem url="/settings" text="Configurações" icon={IconSettings} />
       </ul>
       <ul>
         <MenuItem
-          text="Logout"
+          text="Sair"
           icon={IconLogout}
           onClick={logout}
           className={`text-red-400 hover:bg-red-400 hover:text-white dark:text-red-400 dark:hover:bg-red-400 dark:hover:text-white `}
