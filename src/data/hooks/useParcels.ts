@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Parcel from '../../core/Parcel';
 import ParcelRepository from '../../core/ParcelRepository';
 import ParcelCollection from '../../db/ParcelCollection';
-import useTableOrForm from './useTableorForm';
+import useTableOrForm from './useTableOrForm';
 
 export default function useParcels() {
   const repo: ParcelRepository = new ParcelCollection();
