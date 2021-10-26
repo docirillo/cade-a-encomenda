@@ -1,10 +1,10 @@
-interface NewParcelBtnProps {
+interface ButtonProps {
   className?: string;
   children: any;
   onClick?: () => void;
 }
 
-export default function NewParcelBtn(props: NewParcelBtnProps) {
+export default function Button(props: ButtonProps) {
   return (
     <button
       onClick={props.onClick}

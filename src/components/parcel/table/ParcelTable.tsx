@@ -1,7 +1,7 @@
 import Parcel from '../../../core/Parcel';
 import Image from 'next/image';
 import avatar from '../../../../public/images/moradores/avatar1.png';
-import parcelImage from '../../../../public/images/package.svg';
+import parcelImage from '../../../../public/images/parcelImage.png';
 import { IconDelete, IconEdit } from '../../icons';
 
 interface ParcelTableProps {
@@ -84,11 +84,7 @@ export default function ParcelTable(props) {
           <td className="px-6 py-4 whitespace-nowrap">
             <div className="flex items-center">
               <div className="flex-shrink-0 h-10 w-10">
-                <Image
-                  className="h-10 w-10 rounded-full"
-                  src={parcelImage}
-                  alt=""
-                />
+                <Image className="h-10 w-10" src={parcelImage} alt="" />
               </div>
               <div className="ml-4">
                 <div className="text-sm font-medium dark:text-gray-100 text-gray-900">

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Parcel from '../../../core/Parcel';
 import InputParcel from './InputParcel';
-import NewParcelBtn from '../NewParcelBtn';
+import Button from '../Button';
 
 interface NewParcelFormProps {
   parcel: Parcel;
@@ -72,7 +72,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
       />
 
       <div className="flex mt-7 justify-start">
-        <NewParcelBtn
+        <Button
           className="mr-2 transition duration-500 ease-in-out bg-blue-500 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
           onClick={() =>
             props.parcelChanged?.(
@@ -89,13 +89,13 @@ export default function NewParcelForm(props: NewParcelFormProps) {
           }
         >
           {parcelId ? 'Update' : 'Register'}{' '}
-        </NewParcelBtn>
-        <NewParcelBtn
+        </Button>
+        <Button
           className="transition duration-500 ease-in-out bg-blue-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110"
           onClick={props.cancelled}
         >
           Cancel
-        </NewParcelBtn>
+        </Button>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Parcel from '../../../core/Parcel';
 import InputParcel from './InputParcel';
-import NewParcelBtn from '../NewParcelBtn';
+import Button from '../Button';
 
 interface NewParcelFormProps {
   parcel: Parcel;
@@ -90,7 +90,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                 </div>
               </div>
               <div className="px-4 py-3 dark:bg-gray-700 bg-gray-50 text-center sm:px-6">
-                <NewParcelBtn
+                <Button
                   className="mr-2 transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-green-500 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
                   onClick={() =>
                     props.parcelChanged?.(
@@ -107,13 +107,13 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                   }
                 >
                   {parcelId ? 'Atualizar' : 'Incluir'}{' '}
-                </NewParcelBtn>
-                <NewParcelBtn
+                </Button>
+                <Button
                   className="transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-red-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110"
                   onClick={props.cancelled}
                 >
                   Cancelar
-                </NewParcelBtn>
+                </Button>
               </div>
             </div>
           </div>
