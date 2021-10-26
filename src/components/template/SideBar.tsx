@@ -1,5 +1,5 @@
 import useAuth from '../../data/hooks/useAuth';
-import { IconDelivery, IconHome, IconLogout, IconSettings } from '../icons';
+import { IconParcels, IconHome, IconLogout, IconSettings } from '../icons';
 import Logo from './Logo';
 import MenuItem from './MenuItem';
 
@@ -16,7 +16,7 @@ export default function SideBar() {
       </div>
       <ul className="flex-grow">
         <MenuItem url="/" text="Home" icon={IconHome} />
-        <MenuItem url="/parcels" text="Encomendas" icon={IconDelivery} />
+        <MenuItem url="/parcels" text="Encomendas" icon={IconParcels} />
         <MenuItem url="/settings" text="Configurações" icon={IconSettings} />
       </ul>
       <ul>
