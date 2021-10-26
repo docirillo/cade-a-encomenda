@@ -17,7 +17,7 @@ export default function SideBar() {
       <ul className="flex-grow">
         <MenuItem url="/" text="Home" icon={IconHome} />
         <MenuItem url="/parcels" text="Encomendas" icon={IconParcels} />
-        <MenuItem url="/settings" text="Configurações" icon={IconSettings} />
+        <MenuItem url="/settings" text="Ajustes" icon={IconSettings} />
       </ul>
       <ul>
         <MenuItem
