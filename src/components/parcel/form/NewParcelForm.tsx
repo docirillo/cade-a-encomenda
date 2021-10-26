@@ -29,7 +29,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="mt-5 md:mt-0 md:col-span-2">
             <div className="shadow overflow-hidden sm:rounded-md">
-              <div className="px-4 py-5 bg-white dark:bg-purple-900 sm:p-6">
+              <div className="px-4 py-5 bg-white dark:bg-gray-700 sm:p-6">
                 <div className="grid grid-cols-6 gap-6">
                   <div className="col-span-6 sm:col-span-3">
                     <InputParcel
@@ -89,9 +89,9 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                   </div>
                 </div>
               </div>
-              <div className="px-4 py-3 dark:bg-purple-800 bg-gray-50 text-center sm:px-6">
+              <div className="px-4 py-3 dark:bg-gray-700 bg-gray-50 text-center sm:px-6">
                 <NewParcelBtn
-                  className="mr-2 transition duration-500 ease-in-out bg-purple-900 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
+                  className="mr-2 transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-green-500 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
                   onClick={() =>
                     props.parcelChanged?.(
                       new Parcel(
@@ -109,7 +109,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                   {parcelId ? 'Atualizar' : 'Incluir'}{' '}
                 </NewParcelBtn>
                 <NewParcelBtn
-                  className="transition duration-500 ease-in-out bg-purple-900 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110"
+                  className="transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-red-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110"
                   onClick={props.cancelled}
                 >
                   Cancelar

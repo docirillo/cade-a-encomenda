@@ -16,7 +16,7 @@ export default function InputParcel(props: InputParcelProps) {
         type={props.type ?? 'text'}
         value={props.value}
         readOnly={props.readonly}
-        className={`border border-purple-800 rounded-md focus:outline-none dark:bg-purple-500 bg-white px-4 py-2 ${
+        className={`border border-sky-800 rounded-md focus:outline-none dark:bg-gray-500 bg-white px-4 py-2 ${
           props.readonly ? '' : 'focus:bg-white dark:text-white'
         }`}
       />
