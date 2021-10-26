@@ -1,6 +1,6 @@
-import Button from '../components/parcel/Button';
-import NewParcelForm from '../components/parcel/form/NewParcelForm';
-import ParcelTable from '../components/parcel/table/ParcelTable';
+import Button from '../components/template/Button';
+import NewParcelForm from '../components/parcel/NewParcelForm';
+import ParcelTable from '../components/parcel/ParcelTable';
 import Layout from '../components/template/Layout';
 import useParcels from '../data/hooks/useParcels';
 

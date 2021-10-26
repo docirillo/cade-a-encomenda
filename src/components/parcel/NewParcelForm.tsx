@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Parcel from '../../../core/Parcel';
-import InputParcel from './InputParcel';
-import Button from '../Button';
+import Parcel from '../../core/Parcel';
+import Input from '../template/Input';
+import Button from '../template/Button';
 
 interface NewParcelFormProps {
   parcel: Parcel;
@@ -32,7 +32,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
               <div className="px-4 py-5 bg-white dark:bg-gray-700 sm:p-6">
                 <div className="grid grid-cols-6 gap-6">
                   <div className="col-span-6 sm:col-span-3">
-                    <InputParcel
+                    <Input
                       text="Nome na Encomenda"
                       value={parcelName}
                       valueChanged={setParcelName}
@@ -41,7 +41,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                   </div>
 
                   <div className="col-span-6 sm:col-span-3">
-                    <InputParcel
+                    <Input
                       text="Código da Encomenda"
                       value={parcelCode}
                       valueChanged={setParcelCode}
@@ -50,7 +50,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                   </div>
 
                   <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                    <InputParcel
+                    <Input
                       text="Bloco"
                       type="number"
                       value={parcelBuilding}
@@ -60,7 +60,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                   </div>
 
                   <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                    <InputParcel
+                    <Input
                       text="Apartamento"
                       type="number"
                       value={parcelApartment}
@@ -70,7 +70,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                   </div>
 
                   <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                    <InputParcel
+                    <Input
                       text="Encomenda Entregue?"
                       type="text"
                       value={parcelIsDelivered}
@@ -80,7 +80,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
                   </div>
 
                   <div className="col-span-6 sm:col-span-3 lg:col-span-3">
-                    <InputParcel
+                    <Input
                       text="Observações"
                       value={parcelNote}
                       valueChanged={setParcelNote}

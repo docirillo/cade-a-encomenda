@@ -1,4 +1,4 @@
-interface InputParcelProps {
+interface InputProps {
   type?: 'text' | 'number' | 'email' | 'tel' | 'checkbox';
   value: any;
   text: string;
@@ -7,7 +7,7 @@ interface InputParcelProps {
   valueChanged?: (value: any) => void;
 }
 
-export default function InputParcel(props: InputParcelProps) {
+export default function InputParcel(props: InputProps) {
   return (
     <div className={`flex flex-col ${props.className}`}>
       <label className="mb-2">{props.text}</label>

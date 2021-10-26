@@ -1,8 +1,8 @@
-import Parcel from '../../../core/Parcel';
+import Parcel from '../../core/Parcel';
 import Image from 'next/image';
-import avatar from '../../../../public/images/moradores/avatar1.png';
-import parcelImage from '../../../../public/images/parcelImage.png';
-import { IconDelete, IconEdit } from '../../icons';
+import avatar from '../../../public/images/moradores/avatar1.png';
+import parcelImage from '../../../public/images/parcelImage.png';
+import { IconDelete, IconEdit } from '../icons';
 
 interface ParcelTableProps {
   parcels: Parcel[];
