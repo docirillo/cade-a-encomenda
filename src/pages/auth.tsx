@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import AuthInput from '../components/auth/AuthInput';
 import Image from 'next/image';
-import logo from '../../public/images/logo.png';
+import logo from '../../public/images/Goods.svg';
 import { IconWarning } from '../components/icons';
 import useAuth from '../data/hooks/useAuth';
 
@@ -32,16 +32,16 @@ export default function Auth() {
 
   return (
     <div className="flex h-screen items-center justify-center">
-      <div className="hidden md:block md:w1/3 lg:w-1/3">
+      <div className="hidden md:block md:w1/2 lg:w-2/3">
         <Image
           src={logo}
-          alt="Authentication Logo Image"
+          alt="Imagem Tela Autenticação"
           className="h-screen w-full object-cover"
-          width={900}
-          height={900}
+          width={1000}
+          height={1000}
         />
       </div>
-      <div className="m-10 md:w-2/3 w-full lg:w-1/3">
+      <div className="m-10 md:w-1/2 w-full lg:w-1/3">
         <h1 className={`text-3xl font-bold mb-5`}>
           {mode === 'login'
             ? 'Entre com a sua Conta'
