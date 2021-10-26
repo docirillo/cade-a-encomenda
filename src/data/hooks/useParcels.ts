@@ -7,13 +7,10 @@ import useTableOrForm from './useTableOrForm';
 export default function useParcels() {
   const repo: ParcelRepository = new ParcelCollection();
   const { tableVisible, showTable, showForm } = useTableOrForm();
-
-  const [parcel, setParcel] = useState(Parcel.emptyParcel());
+  const [parcel, setParcel] = useState<Parcel>(Parcel.emptyParcel());
   const [parcels, setParcels] = useState<Parcel[]>([]);
 
-  useEffect(() => {
-    repo.getAll().then(setParcels);
-  }, []);
+  useEffect(getAll, []);
 
   //funcao para obter todos e deixar tabela visivel
   function getAll() {
