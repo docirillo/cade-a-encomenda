@@ -38,7 +38,7 @@ export default function Parcels() {
       ) : (
         <NewParcelForm
           parcel={parcel}
-          parcelChanged={saveParcel}
+          onChange={saveParcel}
           cancelled={showTable}
         />
       )}

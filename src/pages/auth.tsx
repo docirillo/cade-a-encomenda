@@ -62,14 +62,14 @@ export default function Auth() {
           label="E-mail"
           type="email"
           value={email}
-          valueChanged={setEmail}
+          onChange={setEmail}
           required
         />
         <AuthInput
           label="Senha"
           type="password"
           value={password}
-          valueChanged={setPassword}
+          onChange={setPassword}
           required
         />
 

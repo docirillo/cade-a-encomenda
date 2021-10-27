@@ -4,7 +4,7 @@ interface InputProps {
   text: string;
   readonly?: boolean;
   className?: string;
-  valueChanged?: (value: any) => void;
+  onChange?: (value: any) => void;
 }
 
 export default function Input(props: InputProps) {
@@ -12,7 +12,7 @@ export default function Input(props: InputProps) {
     <div className={`flex flex-col ${props.className}`}>
       <label className="mb-2">{props.text}</label>
       <input
-        onChange={(e) => props.valueChanged?.(e.target.value)}
+        onChange={(e) => props.onChange?.(e.target.value)}
         type={props.type ?? 'text'}
         value={props.value}
         readOnly={props.readonly}

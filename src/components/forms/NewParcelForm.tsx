@@ -3,10 +3,12 @@ import Parcel from '../../core/Parcel';
 import Input from '../template/Input';
 import Button from '../template/Button';
 import TextArea from '../template/TextArea';
+import Image from 'next/image';
+import illu1 from '../../../public/images/illu1.svg';
 
 interface NewParcelFormProps {
   parcel: Parcel;
-  parcelChanged?: (parcel: Parcel) => void;
+  onChange?: (parcel: Parcel) => void;
   cancelled?: () => void;
 }
 
@@ -25,101 +27,88 @@ export default function NewParcelForm(props: NewParcelFormProps) {
   );
   const [parcelNote, setParcelNote] = useState(props.parcel?.parcelNote ?? '');
   return (
-    <>
-      <div className="mt-10 sm:mt-0">
-        <div className="md:grid md:grid-cols-4 md:gap-6">
-          <div className="mt-5 md:mt-0 md:col-span-2">
-            <div className="shadow overflow-hidden sm:rounded-md">
-              <div className="px-4 py-5 bg-white dark:bg-gray-700 sm:p-6">
-                <div className="grid grid-cols-6 gap-6">
-                  <div className="col-span-6 sm:col-span-3">
-                    <Input
-                      text="Nome na Encomenda"
-                      value={parcelName}
-                      valueChanged={setParcelName}
-                      className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
-                    />
-                  </div>
+    <div className="md:grid md:grid-cols-4 md:gap-6">
+      <div className="mt-20 w-full">
+        <Image src={illu1} alt="" />
+      </div>
 
-                  <div className="col-span-6 sm:col-span-3">
-                    <Input
-                      text="Código da Encomenda"
-                      value={parcelCode}
-                      valueChanged={setParcelCode}
-                      className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
-                    />
-                  </div>
+      <div className="mt-5 md:mt-0">
+        <div className="px-4 py-5 bg-gray-50 dark:bg-gray-700 sm:p-6">
+          <Input
+            text="Nome na Encomenda"
+            value={parcelName}
+            onChange={setParcelName}
+            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
+          />
 
-                  <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                    <Input
-                      text="Bloco"
-                      type="number"
-                      value={parcelBuilding}
-                      valueChanged={setParcelBuilding}
-                      className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
-                    />
-                  </div>
+          <Input
+            text="Código da Encomenda"
+            value={parcelCode}
+            onChange={setParcelCode}
+            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
+          />
 
-                  <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                    <Input
-                      text="Apartamento"
-                      type="number"
-                      value={parcelApartment}
-                      valueChanged={setParcelApartment}
-                      className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
-                    />
-                  </div>
+          <Input
+            text="Bloco"
+            type="number"
+            value={parcelBuilding}
+            onChange={setParcelBuilding}
+            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md"
+          />
 
-                  <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                    <Input
-                      text="Encomenda Entregue?"
-                      type="text"
-                      value={parcelIsDelivered}
-                      valueChanged={setParcelIsDelivered}
-                      className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
-                    />
-                  </div>
+          <Input
+            text="Apartamento"
+            type="number"
+            value={parcelApartment}
+            onChange={setParcelApartment}
+            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md"
+          />
 
-                  <div className="col-span-6 sm:col-span-6 lg:col-span-6">
-                    <TextArea
-                      text="Observações"
-                      value={parcelNote}
-                      valueChanged={setParcelNote}
-                      className="mt-1 form-text-area dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="px-4 py-3 dark:bg-gray-700 bg-gray-50 text-center sm:px-6">
-                <Button
-                  className="mr-2 transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-green-500 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
-                  onClick={() =>
-                    props.parcelChanged?.(
-                      new Parcel(
-                        parcelName,
-                        parcelCode,
-                        parcelBuilding,
-                        parcelApartment,
-                        parcelIsDelivered,
-                        parcelNote,
-                        parcelId,
-                      ),
-                    )
-                  }
-                >
-                  {parcelId ? 'Atualizar' : 'Incluir'}{' '}
-                </Button>
-                <Button
-                  className="transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-red-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110"
-                  onClick={props.cancelled}
-                >
-                  Cancelar
-                </Button>
-              </div>
-            </div>
-          </div>
+          <Input
+            text="Entregue?"
+            type="text"
+            value={parcelIsDelivered}
+            onChange={setParcelIsDelivered}
+            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md"
+          />
+          {/* <select className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md">
+            <option>Sim</option>
+            <option>Não</option>
+          </select> */}
+
+          <TextArea
+            text="Observações"
+            value={parcelNote}
+            onChange={setParcelNote}
+            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
+          />
+
+          <Button
+            className="mt-4 mr-2 transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-green-500 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
+            onClick={() =>
+              props.onChange?.(
+                new Parcel(
+                  parcelName,
+                  parcelCode,
+                  parcelBuilding,
+                  parcelApartment,
+                  parcelIsDelivered,
+                  parcelNote,
+                  parcelId,
+                ),
+              )
+            }
+          >
+            {parcelId ? 'Atualizar' : 'Incluir'}{' '}
+          </Button>
+          <Button
+            className="transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-red-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110"
+            onClick={props.cancelled}
+          >
+            Cancelar
+          </Button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
