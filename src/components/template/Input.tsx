@@ -3,7 +3,7 @@ interface InputProps {
   value: any;
   text: string;
   readonly?: boolean;
-  className: string;
+  className?: string;
   valueChanged?: (value: any) => void;
 }
 
