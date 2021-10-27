@@ -53,7 +53,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
             type="number"
             value={parcelBuilding}
             onChange={setParcelBuilding}
-            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md"
+            className="mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-2/6 shadow-sm sm:text-sm rounded-md"
           />
 
           <Input
@@ -61,7 +61,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
             type="number"
             value={parcelApartment}
             onChange={setParcelApartment}
-            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md"
+            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/6 shadow-sm sm:text-sm rounded-md"
           />
 
           <Input

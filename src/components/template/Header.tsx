@@ -15,7 +15,7 @@ export default function Header(props: HeaderProps) {
       <Title title={props.title} subtitle={props.subtitle} />
       <div className={`flex flex-grow justify-end items-center`}>
         <ChangeThemeButton theme={theme} changeTheme={changeTheme} />
-        <UserAvatar className="ml-3" />
+        <UserAvatar className="ml-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
       </div>
     </div>
   );

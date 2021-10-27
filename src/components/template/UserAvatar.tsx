@@ -13,11 +13,11 @@ export default function UserAvatar(props: UserAvatarProps) {
   return (
     <Link href="/profile" passHref={true}>
       <Image
-        width="80px"
-        height="80px"
+        width="60px"
+        height="60px"
         src={user?.imageUrl ?? avatar}
         alt="User Avatar"
-        className={`h-10 w-10 rounded-full cursor-pointer ${props.className}`}
+        className={`rounded-full cursor-pointer ${props.className}`}
       />
     </Link>
   );

@@ -10,41 +10,41 @@ interface ParcelTableProps {
   parcelDeleted?: (parcel: Parcel) => void;
 }
 
-export default function ParcelTable(props) {
+export default function ParcelTable(props: ParcelTableProps) {
   const showActions = props.parcelDeleted || props.parcelSelected;
 
   //funcao para renderizar o cabecalho da tabela
   function renderingHeader() {
     return (
-      <tr className="dark:bg-gray-700 dark:text-purple-200">
+      <tr className="dark:bg-gray-700">
         <th
           scope="col"
-          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-purple-100 uppercase tracking-wider"
         >
           Nome na Encomenda
         </th>
         <th
           scope="col"
-          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-purple-100 uppercase tracking-wider"
         >
           Código da Encomenda
         </th>
         <th
           scope="col"
-          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-purple-100 uppercase tracking-wider"
         >
           Observações
         </th>
         <th
           scope="col"
-          className="dark:text-gray-100 px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+          className="dark:text-gray-100 px-8 py-3 text-left text-xs font-medium text-purple-100 uppercase tracking-wider"
         >
           Entregue ao Responsável?
         </th>
         {showActions ? (
           <th
             scope="col"
-            className="dark:text-gray-100 px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
+            className="dark:text-gray-100 px-6 py-3 text-xs font-medium text-purple-100 uppercase tracking-wider"
           >
             Ações
           </th>
@@ -148,7 +148,7 @@ export default function ParcelTable(props) {
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
             <table className="w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">{renderingHeader()}</thead>
+              <thead className="bg-violet-500">{renderingHeader()}</thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {renderingData()}
               </tbody>
