@@ -1,55 +1,55 @@
 export default class Parcel {
-  #parcelId: string;
-  #parcelName: string;
-  #parcelCode: string;
-  #parcelBuilding: number;
-  #parcelApartment: number;
-  #parcelIsDelivered: string;
-  #parcelNote: string;
+  #id: string;
+  #name: string;
+  #code: string;
+  #building: number;
+  #apartment: number;
+  #parcelStatus: string;
+  #note: string;
 
   constructor(
-    parcelName: string,
-    parcelCode: string,
-    parcelBuilding: number,
-    parcelApartment: number,
-    parcelIsDelivered: string,
-    parcelNote: string,
-    parcelId: string = null,
+    name: string,
+    code: string,
+    building: number,
+    apartment: number,
+    parcelStatus: string,
+    note: string,
+    id: string = null,
   ) {
-    this.#parcelName = parcelName;
-    this.#parcelCode = parcelCode;
-    this.#parcelBuilding = parcelBuilding;
-    this.#parcelApartment = parcelApartment;
-    this.#parcelIsDelivered = parcelIsDelivered;
-    this.#parcelNote = parcelNote;
-    this.#parcelId = parcelId;
+    this.#name = name;
+    this.#code = code;
+    this.#building = building;
+    this.#apartment = apartment;
+    this.#parcelStatus = parcelStatus;
+    this.#note = note;
+    this.#id = id;
   }
 
   static emptyParcel() {
     return new Parcel('', '', 0, 0, 'no', '');
   }
 
-  get parcelId() {
-    return this.#parcelId;
+  get id() {
+    return this.#id;
   }
 
-  get parcelName() {
-    return this.#parcelName;
+  get name() {
+    return this.#name;
   }
 
-  get parcelCode() {
-    return this.#parcelCode;
+  get code() {
+    return this.#code;
   }
-  get parcelBuilding() {
-    return this.#parcelBuilding;
+  get building() {
+    return this.#building;
   }
-  get parcelApartment() {
-    return this.#parcelApartment;
+  get apartment() {
+    return this.#apartment;
   }
-  get parcelIsDelivered() {
-    return this.#parcelIsDelivered;
+  get parcelStatus() {
+    return this.#parcelStatus;
   }
-  get parcelNote() {
-    return this.#parcelNote;
+  get note() {
+    return this.#note;
   }
 }

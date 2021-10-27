@@ -6,12 +6,12 @@ export default class ParcelCollection implements ParcelRepository {
   #converter = {
     toFirestore(parcel: Parcel) {
       return {
-        parcelName: parcel.parcelName,
-        parcelCode: parcel.parcelCode,
-        parcelBuilding: parcel.parcelBuilding,
-        parcelApartment: parcel.parcelApartment,
-        parcelIsDelivered: parcel.parcelIsDelivered,
-        parcelNote: parcel.parcelNote,
+        name: parcel.name,
+        code: parcel.code,
+        building: parcel.building,
+        apartment: parcel.apartment,
+        parcelStatus: parcel.parcelStatus,
+        note: parcel.note,
       };
     },
     fromFirestore(
@@ -20,12 +20,12 @@ export default class ParcelCollection implements ParcelRepository {
     ): Parcel {
       const data = snapshot.data(options);
       return new Parcel(
-        data.parcelName,
-        data.parcelCode,
-        data.parcelBuilding,
-        data.parcelApartment,
-        data.parcelIsDelivered,
-        data.parcelNote,
+        data.name,
+        data.code,
+        data.building,
+        data.apartment,
+        data.parcelStatus,
+        data.note,
         snapshot.id,
       );
     },
@@ -33,8 +33,8 @@ export default class ParcelCollection implements ParcelRepository {
 
   //metodo para salvar
   async save(parcel: Parcel): Promise<Parcel> {
-    if (parcel?.parcelId) {
-      await this.collection().doc(parcel.parcelId).set(parcel);
+    if (parcel?.id) {
+      await this.collection().doc(parcel.id).set(parcel);
       return parcel;
     } else {
       const docRef = await this.collection().add(parcel);
@@ -44,7 +44,7 @@ export default class ParcelCollection implements ParcelRepository {
   }
   //metodo para apagar
   async delete(parcel: Parcel): Promise<void> {
-    return this.collection().doc(parcel.parcelId).delete();
+    return this.collection().doc(parcel.id).delete();
   }
   //metodo para listar
   async getAll(): Promise<Parcel[]> {

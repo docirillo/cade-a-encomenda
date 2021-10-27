@@ -13,19 +13,19 @@ interface NewParcelFormProps {
 }
 
 export default function NewParcelForm(props: NewParcelFormProps) {
-  const parcelId = props.parcel?.parcelId;
-  const [parcelName, setParcelName] = useState(props.parcel?.parcelName ?? '');
-  const [parcelCode, setParcelCode] = useState(props.parcel?.parcelCode ?? '');
+  const parcelId = props.parcel?.id;
+  const [parcelName, setParcelName] = useState(props.parcel?.name ?? '');
+  const [parcelCode, setParcelCode] = useState(props.parcel?.code ?? '');
   const [parcelBuilding, setParcelBuilding] = useState(
-    props.parcel?.parcelBuilding ?? 0,
+    props.parcel?.building ?? 0,
   );
   const [parcelApartment, setParcelApartment] = useState(
-    props.parcel?.parcelApartment ?? 0,
+    props.parcel?.apartment ?? 0,
   );
   const [parcelIsDelivered, setParcelIsDelivered] = useState(
-    props.parcel?.parcelIsDelivered ?? '',
+    props.parcel?.parcelStatus ?? '',
   );
-  const [parcelNote, setParcelNote] = useState(props.parcel?.parcelNote ?? '');
+  const [parcelNote, setParcelNote] = useState(props.parcel?.note ?? '');
   return (
     <div className="md:grid md:grid-cols-4 md:gap-6">
       <div className="mt-20 w-full">

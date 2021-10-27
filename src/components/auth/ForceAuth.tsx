@@ -25,7 +25,7 @@ export default function ForceAuth(props) {
   function renderingLoading() {
     return (
       <div className={`flex justify-center items-center h-screen`}>
-        <Image src={loadingGif} />
+        <Image src={loadingGif} alt="" />
       </div>
     );
   }

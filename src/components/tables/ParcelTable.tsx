@@ -59,7 +59,7 @@ export default function ParcelTable(props) {
     return props.parcels?.map((parcel, i) => {
       return (
         <tr
-          key={parcel.parcelCode}
+          key={parcel.code}
           className={`${
             i % 2 === 0
               ? 'bg-white dark:bg-gray-700'
@@ -73,7 +73,7 @@ export default function ParcelTable(props) {
               </div>
               <div className="ml-4">
                 <div className="text-sm dark:text-gray-100 font-medium text-gray-900">
-                  {parcel.parcelName}
+                  {parcel.name}
                 </div>
                 <div className="text-sm text-gray-500 dark:text-gray-100">
                   <span>Contato do Morador</span>
@@ -88,23 +88,23 @@ export default function ParcelTable(props) {
               </div>
               <div className="ml-4">
                 <div className="text-sm font-medium dark:text-gray-100 text-gray-900">
-                  {parcel.parcelCode}
+                  {parcel.code}
                 </div>
                 <div className="text-sm dark:text-gray-100 text-gray-500">
-                  <span>Bloco: {parcel.parcelBuilding} </span>
-                  <span>Apto: {parcel.parcelApartment} </span>
+                  <span>Bloco: {parcel.building} </span>
+                  <span>Apto: {parcel.apartment} </span>
                 </div>
               </div>
             </div>
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
             <div className="text-sm dark:text-gray-100 text-gray-900">
-              {parcel.parcelNote}
+              {parcel.parcelStatus}
             </div>
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
             <div className="text-sm dark:text-gray-100 text-gray-900">
-              {parcel.parcelIsDelivered}
+              {parcel.note}
             </div>
           </td>
           {showActions ? renderingActions(parcel) : false}
