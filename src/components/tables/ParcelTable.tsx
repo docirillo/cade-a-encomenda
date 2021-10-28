@@ -33,14 +33,15 @@ export default function ParcelTable(props: ParcelTableProps) {
           scope="col"
           className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-purple-100 uppercase tracking-wider"
         >
-          Observações
+          Já Retirado?
         </th>
         <th
           scope="col"
-          className="dark:text-gray-100 px-8 py-3 text-left text-xs font-medium text-purple-100 uppercase tracking-wider"
+          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-purple-100 uppercase tracking-wider"
         >
-          Entregue ao Responsável?
+          Observações
         </th>
+
         {showActions ? (
           <th
             scope="col"
@@ -68,14 +69,14 @@ export default function ParcelTable(props: ParcelTableProps) {
         >
           <td className="px-6 py-4 whitespace-nowrap">
             <div className="flex items-center">
-              <div className="flex-shrink-0 h-10 w-10">
+              <div className="flex-shrink-0 h-12 w-12">
                 <Image className="h-10 w-10 rounded-full" src={avatar} alt="" />
               </div>
               <div className="ml-4">
-                <div className="text-sm dark:text-gray-100 font-medium text-gray-900">
+                <div className="select-none text-sm dark:text-gray-100 font-medium text-gray-900">
                   {parcel.name}
                 </div>
-                <div className="text-sm text-gray-500 dark:text-gray-100">
+                <div className="select-all text-sm text-gray-500 dark:text-gray-100">
                   <span>Contato do Morador</span>
                 </div>
               </div>
@@ -83,27 +84,27 @@ export default function ParcelTable(props: ParcelTableProps) {
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
             <div className="flex items-center">
-              <div className="flex-shrink-0 h-10 w-10">
+              <div className="flex-shrink-0 h-12 w-12">
                 <Image className="h-10 w-10" src={parcelImage} alt="" />
               </div>
               <div className="ml-4">
-                <div className="text-sm font-medium dark:text-gray-100 text-gray-900">
+                <div className="select-all text-sm font-medium dark:text-gray-100 text-gray-900">
                   {parcel.code}
                 </div>
-                <div className="text-sm dark:text-gray-100 text-gray-500">
+                <div className="select-none text-sm dark:text-gray-100 text-gray-500">
                   <span>Bloco: {parcel.building} </span>
                   <span>Apto: {parcel.apartment} </span>
                 </div>
               </div>
             </div>
           </td>
-          <td className="px-6 py-4 whitespace-nowrap">
-            <div className="text-sm dark:text-gray-100 text-gray-900">
+          <td className="px-12 py-4 whitespace-nowrap">
+            <div className="select-none	text-sm dark:text-gray-100 text-gray-900">
               {parcel.parcelStatus}
             </div>
           </td>
           <td className="px-6 py-4 whitespace-nowrap">
-            <div className="text-sm dark:text-gray-100 text-gray-900">
+            <div className="select-all	text-sm dark:text-gray-100 text-gray-900">
               {parcel.note}
             </div>
           </td>
@@ -148,7 +149,9 @@ export default function ParcelTable(props: ParcelTableProps) {
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
             <table className="w-full divide-y divide-gray-200">
-              <thead className="bg-violet-500">{renderingHeader()}</thead>
+              <thead className="bg-violet-500 select-none">
+                {renderingHeader()}
+              </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {renderingData()}
               </tbody>

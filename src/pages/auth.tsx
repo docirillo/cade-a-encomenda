@@ -32,7 +32,7 @@ export default function Auth() {
 
   return (
     <div className="flex h-screen items-center justify-center">
-      <div className="hidden md:block md:w1/2 lg:w-2/3">
+      <div className="hidden md:block md:w-1/2 lg:w-2/3">
         <Image
           src={logo}
           alt="Imagem Tela Autenticação"

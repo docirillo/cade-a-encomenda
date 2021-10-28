@@ -14,7 +14,7 @@ export default function TextArea(props: TextAreaProps) {
         onChange={(e) => props.onChange?.(e.target.value)}
         value={props.value}
         readOnly={props.readonly}
-        className={`border border-sky-800 rounded-md focus:outline-none dark:bg-gray-500 bg-white px-6 py-12 resize-none ${
+        className={`border-sky-800 rounded-md focus:outline-none dark:bg-gray-500 bg-white px-2 py-7 resize-y${
           props.readonly ? '' : 'focus:bg-white dark:text-white'
         }`}
       />

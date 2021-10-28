@@ -6,13 +6,13 @@ import TextArea from '../template/TextArea';
 import Image from 'next/image';
 import illu1 from '../../../public/images/illu1.svg';
 
-interface NewParcelFormProps {
+interface ParcelFormProps {
   parcel: Parcel;
   onChange?: (parcel: Parcel) => void;
   cancelled?: () => void;
 }
 
-export default function NewParcelForm(props: NewParcelFormProps) {
+export default function ParcelForm(props: ParcelFormProps) {
   const parcelId = props.parcel?.id;
   const [parcelName, setParcelName] = useState(props.parcel?.name ?? '');
   const [parcelCode, setParcelCode] = useState(props.parcel?.code ?? '');
@@ -33,19 +33,19 @@ export default function NewParcelForm(props: NewParcelFormProps) {
       </div>
 
       <div className="mt-5 md:mt-0">
-        <div className="px-4 py-5 bg-gray-50 dark:bg-gray-700 sm:p-6">
+        <div className="px-4 py-5 bg-violet-50 dark:bg-gray-700 sm:p-6">
           <Input
             text="Nome na Encomenda"
             value={parcelName}
             onChange={setParcelName}
-            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
+            className="dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
           />
 
           <Input
             text="Código da Encomenda"
             value={parcelCode}
             onChange={setParcelCode}
-            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
+            className="mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
           />
 
           <Input
@@ -61,7 +61,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
             type="number"
             value={parcelApartment}
             onChange={setParcelApartment}
-            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/6 shadow-sm sm:text-sm rounded-md"
+            className="mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-2/6 shadow-sm sm:text-sm rounded-md"
           />
 
           <Input
@@ -69,7 +69,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
             type="text"
             value={parcelIsDelivered}
             onChange={setParcelIsDelivered}
-            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md"
+            className="mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md"
           />
           {/* <select className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md">
             <option>Sim</option>
@@ -80,7 +80,7 @@ export default function NewParcelForm(props: NewParcelFormProps) {
             text="Observações"
             value={parcelNote}
             onChange={setParcelNote}
-            className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
+            className="mt-2 dark:text-white text-gray-500 focus:ring-violet-500 focus:border-violet-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
           />
 
           <Button

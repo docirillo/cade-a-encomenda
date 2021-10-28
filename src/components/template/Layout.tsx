@@ -17,7 +17,7 @@ export default function Layout(props: LayoutProps) {
       <div className={` ${theme} flex h-screen w-screen`}>
         <SideBar />
         <div
-          className={`flex flex-col p-7 bg-gray-100 dark:bg-gray-800 w-full`}
+          className={`select-none flex flex-col p-7 bg-gray-100 dark:bg-gray-800 w-full`}
         >
           <Header title={props.title} subtitle={props.subtitle} />
           <Content>{props.children}</Content>
