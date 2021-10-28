@@ -152,7 +152,7 @@ export default function ParcelTable(props: ParcelTableProps) {
               <thead className="bg-violet-500 select-none">
                 {renderingHeader()}
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="uppercase bg-white divide-y divide-gray-200">
                 {renderingData()}
               </tbody>
             </table>

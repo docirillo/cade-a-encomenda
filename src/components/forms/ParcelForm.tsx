@@ -39,7 +39,7 @@ export default function ParcelForm(props: ParcelFormProps) {
             value={parcelName}
             maxlength="30"
             onChange={setParcelName}
-            className="dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
+            className="uppercase dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
           />
 
           <Input
@@ -47,7 +47,7 @@ export default function ParcelForm(props: ParcelFormProps) {
             maxlength="13"
             value={parcelCode}
             onChange={setParcelCode}
-            className="mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
+            className="uppercase mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
           />
 
           <Input
@@ -55,7 +55,7 @@ export default function ParcelForm(props: ParcelFormProps) {
             maxlength="2"
             value={parcelBuilding}
             onChange={setParcelBuilding}
-            className="mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-2/6 shadow-sm sm:text-sm rounded-md"
+            className="uppercase mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-2/6 shadow-sm sm:text-sm rounded-md"
           />
 
           <Input
@@ -63,7 +63,7 @@ export default function ParcelForm(props: ParcelFormProps) {
             maxlength="3"
             value={parcelApartment}
             onChange={setParcelApartment}
-            className="mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-2/6 shadow-sm sm:text-sm rounded-md"
+            className="uppercase mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-2/6 shadow-sm sm:text-sm rounded-md"
           />
 
           <Input
@@ -71,7 +71,7 @@ export default function ParcelForm(props: ParcelFormProps) {
             maxlength="3"
             value={parcelIsDelivered}
             onChange={setParcelIsDelivered}
-            className="mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md"
+            className="uppercase mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md"
           />
           {/* <select className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md">
             <option>Sim</option>
@@ -83,7 +83,7 @@ export default function ParcelForm(props: ParcelFormProps) {
             maxlength="50"
             value={parcelNote}
             onChange={setParcelNote}
-            className="mt-2 dark:text-white text-gray-500 focus:ring-violet-500 focus:border-violet-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
+            className="uppercase mt-2 dark:text-white text-gray-500 focus:ring-violet-500 focus:border-violet-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
           />
 
           <Button

@@ -26,7 +26,7 @@ export default class Parcel {
   }
 
   static emptyParcel() {
-    return new Parcel('', '', '0', '0', 'no', '');
+    return new Parcel('', '', '0', '0', 'NÃO', '');
   }
 
   get id() {
