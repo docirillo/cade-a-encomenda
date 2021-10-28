@@ -3,7 +3,7 @@ export default class Parcel {
   #name: string;
   #code: string;
   #building: string;
-  #apartment: string;
+  #apartment: number;
   #parcelStatus: string;
   #note: string;
 
@@ -11,7 +11,7 @@ export default class Parcel {
     name: string,
     code: string,
     building: string,
-    apartment: string,
+    apartment: number,
     parcelStatus: string,
     note: string,
     id: string = null,
@@ -26,7 +26,7 @@ export default class Parcel {
   }
 
   static emptyParcel() {
-    return new Parcel('', '', '0', '0', 'NÃO', '');
+    return new Parcel('', '', '0', 1, 'NÃO', '');
   }
 
   get id() {

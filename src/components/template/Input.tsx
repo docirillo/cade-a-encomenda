@@ -4,7 +4,10 @@ interface InputProps {
   text: string;
   readonly?: boolean;
   className?: string;
-  maxlength?: any;
+  maxLength?: any;
+  min?: number;
+  max?: number;
+  required?: boolean;
   onChange?: (value: any) => void;
 }
 
@@ -17,7 +20,10 @@ export default function Input(props: InputProps) {
         type={props.type ?? 'text'}
         value={props.value}
         readOnly={props.readonly}
-        maxLength={props.maxlength}
+        maxLength={props.maxLength}
+        min={props.min}
+        max={props.max}
+        required={props.required}
         className={`border border-sky-800 rounded-md focus:outline-none dark:bg-gray-500 bg-white px-4 py-2 ${
           props.readonly ? '' : 'focus:bg-white dark:text-white'
         }`}

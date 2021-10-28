@@ -20,7 +20,7 @@ export default function ParcelForm(props: ParcelFormProps) {
     props.parcel?.building ?? '0',
   );
   const [parcelApartment, setParcelApartment] = useState(
-    props.parcel?.apartment ?? '0',
+    props.parcel?.apartment ?? 0,
   );
   const [parcelIsDelivered, setParcelIsDelivered] = useState(
     props.parcel?.parcelStatus ?? '',
@@ -37,14 +37,14 @@ export default function ParcelForm(props: ParcelFormProps) {
           <Input
             text="Nome na Encomenda"
             value={parcelName}
-            maxlength="30"
+            maxLength="30"
             onChange={setParcelName}
             className="uppercase dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
           />
 
           <Input
             text="Código da Encomenda"
-            maxlength="13"
+            maxLength="13"
             value={parcelCode}
             onChange={setParcelCode}
             className="uppercase mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
@@ -52,7 +52,7 @@ export default function ParcelForm(props: ParcelFormProps) {
 
           <Input
             text="Bloco"
-            maxlength="2"
+            maxLength="2"
             value={parcelBuilding}
             onChange={setParcelBuilding}
             className="uppercase mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-2/6 shadow-sm sm:text-sm rounded-md"
@@ -60,7 +60,7 @@ export default function ParcelForm(props: ParcelFormProps) {
 
           <Input
             text="Apartamento"
-            maxlength="3"
+            maxLength="3"
             value={parcelApartment}
             onChange={setParcelApartment}
             className="uppercase mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-2/6 shadow-sm sm:text-sm rounded-md"
@@ -68,15 +68,11 @@ export default function ParcelForm(props: ParcelFormProps) {
 
           <Input
             text="Entregue?"
-            maxlength="3"
+            maxLength="3"
             value={parcelIsDelivered}
             onChange={setParcelIsDelivered}
             className="uppercase mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md"
           />
-          {/* <select className="mt-1 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md">
-            <option>Sim</option>
-            <option>Não</option>
-          </select> */}
 
           <TextArea
             text="Observações"
