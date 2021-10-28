@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Parcel from '../../core/Parcel';
-import Input from '../template/Input';
-import Button from '../template/Button';
-import TextArea from '../template/TextArea';
+import Input from './inputs/Input';
+import Button from './buttons/Button';
+import TextArea from './inputs/TextArea';
 import Image from 'next/image';
 import illu1 from '../../../public/images/illu1.svg';
 

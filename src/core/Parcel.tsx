@@ -25,7 +25,7 @@ export default class Parcel {
     this.#id = id;
   }
 
-  static emptyParcel() {
+  static empty() {
     return new Parcel('', '', '0', 1, 'NÃO', '');
   }
 

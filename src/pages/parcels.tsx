@@ -1,4 +1,4 @@
-import Button from '../components/template/Button';
+import Button from '../components/forms/buttons/Button';
 import ParcelForm from '../components/forms/ParcelForm';
 import ParcelTable from '../components/tables/ParcelTable';
 import Layout from '../components/template/Layout';

@@ -7,7 +7,7 @@ import useTableOrForm from './useTableOrForm';
 export default function useParcels() {
   const repo: ParcelRepository = new ParcelCollection();
   const { tableVisible, showTable, showForm } = useTableOrForm();
-  const [parcel, setParcel] = useState<Parcel>(Parcel.emptyParcel());
+  const [parcel, setParcel] = useState<Parcel>(Parcel.empty());
   const [parcels, setParcels] = useState<Parcel[]>([]);
 
   useEffect(getAll, []);
@@ -34,7 +34,7 @@ export default function useParcels() {
 
   //funcao para criar novo Parcel
   function newParcel() {
-    setParcel(Parcel.emptyParcel());
+    setParcel(Parcel.empty());
     showForm();
   }
 
