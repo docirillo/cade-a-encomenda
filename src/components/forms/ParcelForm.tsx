@@ -17,10 +17,10 @@ export default function ParcelForm(props: ParcelFormProps) {
   const [parcelName, setParcelName] = useState(props.parcel?.name ?? '');
   const [parcelCode, setParcelCode] = useState(props.parcel?.code ?? '');
   const [parcelBuilding, setParcelBuilding] = useState(
-    props.parcel?.building ?? 0,
+    props.parcel?.building ?? '0',
   );
   const [parcelApartment, setParcelApartment] = useState(
-    props.parcel?.apartment ?? 0,
+    props.parcel?.apartment ?? '0',
   );
   const [parcelIsDelivered, setParcelIsDelivered] = useState(
     props.parcel?.parcelStatus ?? '',
@@ -37,12 +37,14 @@ export default function ParcelForm(props: ParcelFormProps) {
           <Input
             text="Nome na Encomenda"
             value={parcelName}
+            maxlength="30"
             onChange={setParcelName}
             className="dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
           />
 
           <Input
             text="Código da Encomenda"
+            maxlength="13"
             value={parcelCode}
             onChange={setParcelCode}
             className="mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/3 shadow-sm sm:text-sm rounded-md"
@@ -50,7 +52,7 @@ export default function ParcelForm(props: ParcelFormProps) {
 
           <Input
             text="Bloco"
-            type="number"
+            maxlength="2"
             value={parcelBuilding}
             onChange={setParcelBuilding}
             className="mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-2/6 shadow-sm sm:text-sm rounded-md"
@@ -58,7 +60,7 @@ export default function ParcelForm(props: ParcelFormProps) {
 
           <Input
             text="Apartamento"
-            type="number"
+            maxlength="3"
             value={parcelApartment}
             onChange={setParcelApartment}
             className="mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-2/6 shadow-sm sm:text-sm rounded-md"
@@ -66,7 +68,7 @@ export default function ParcelForm(props: ParcelFormProps) {
 
           <Input
             text="Entregue?"
-            type="text"
+            maxlength="3"
             value={parcelIsDelivered}
             onChange={setParcelIsDelivered}
             className="mt-2 dark:text-white text-gray-500 focus:ring-indigo-500 focus:border-indigo-500 block w-3/12 shadow-sm sm:text-sm rounded-md"
@@ -78,6 +80,7 @@ export default function ParcelForm(props: ParcelFormProps) {
 
           <TextArea
             text="Observações"
+            maxlength="50"
             value={parcelNote}
             onChange={setParcelNote}
             className="mt-2 dark:text-white text-gray-500 focus:ring-violet-500 focus:border-violet-500 block w-3/3 shadow-sm sm:text-sm rounded-md"

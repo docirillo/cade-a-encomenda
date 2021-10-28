@@ -2,16 +2,16 @@ export default class Parcel {
   #id: string;
   #name: string;
   #code: string;
-  #building: number;
-  #apartment: number;
+  #building: string;
+  #apartment: string;
   #parcelStatus: string;
   #note: string;
 
   constructor(
     name: string,
     code: string,
-    building: number,
-    apartment: number,
+    building: string,
+    apartment: string,
     parcelStatus: string,
     note: string,
     id: string = null,
@@ -26,7 +26,7 @@ export default class Parcel {
   }
 
   static emptyParcel() {
-    return new Parcel('', '', 0, 0, 'no', '');
+    return new Parcel('', '', '0', '0', 'no', '');
   }
 
   get id() {
