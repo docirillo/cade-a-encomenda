@@ -40,7 +40,7 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: { animation: ['hover', 'focus'] },
   },
   plugins: [require('@tailwindcss/forms')],
 };

@@ -83,7 +83,7 @@ export default function ParcelForm(props: ParcelFormProps) {
           />
 
           <Button
-            className="mt-4 mr-2 transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-green-500 hover:bg-green-500 transform hover:-translate-y-1 hover:scale-110"
+            className="mt-4 mr-2 transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-emerald-500 hover:bg-emerald-500 transform hover:-translate-y-1 hover:scale-110"
             onClick={() =>
               props.onChange?.(
                 new Parcel(
@@ -101,7 +101,7 @@ export default function ParcelForm(props: ParcelFormProps) {
             {parcelId ? 'Atualizar' : 'Incluir'}{' '}
           </Button>
           <Button
-            className="transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-red-500 hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110"
+            className="transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-rose-500 hover:bg-rose-400 transform hover:-translate-y-1 hover:scale-110"
             onClick={props.cancelled}
           >
             Cancelar
