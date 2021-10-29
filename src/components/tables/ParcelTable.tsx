@@ -16,28 +16,28 @@ export default function NewParcelTable(props: NewParcelTableProps) {
   //funcao para renderizar o cabecalho da tabela
   function renderingHeader() {
     return (
-      <tr className="dark:bg-gray-700">
+      <tr className="bg-sky-200 dark:bg-cyan-900">
         <th
           scope="col"
-          className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"
+          className="p-3 font-bold uppercase text-gray-600 dark:text-white border border-gray-300 hidden lg:table-cell"
         >
           Nome na Encomenda
         </th>
         <th
           scope="col"
-          className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"
+          className="p-3 font-bold uppercase text-gray-600 dark:text-white border border-gray-300 hidden lg:table-cell"
         >
           Código da Encomenda
         </th>
         <th
           scope="col"
-          className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"
+          className="p-3 font-bold uppercase text-gray-600 dark:text-white border border-gray-300 hidden lg:table-cell"
         >
           Já Retirado?
         </th>
         <th
           scope="col"
-          className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"
+          className="p-3 font-bold uppercase text-gray-600 dark:text-white border border-gray-300 hidden lg:table-cell"
         >
           Observações
         </th>
@@ -45,7 +45,7 @@ export default function NewParcelTable(props: NewParcelTableProps) {
         {showActions ? (
           <th
             scope="col"
-            className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"
+            className="p-3 font-bold uppercase text-gray-600 dark:text-white border border-gray-300 hidden lg:table-cell"
           >
             Ações
           </th>
@@ -60,11 +60,11 @@ export default function NewParcelTable(props: NewParcelTableProps) {
     return props.parcels?.map((parcel, i) => {
       return (
         <tr
-          key={parcel.code}
+          key={parcel.id}
           className={`${
             i % 2 === 0
-              ? 'bg-white dark:bg-gray-700 lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0'
-              : 'bg-gray-100 dark:bg-gray-600 lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0'
+              ? ' bg-sky-100 dark:bg-gray-900 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0'
+              : ' bg-sky-50 dark:bg-gray-700 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0'
           }`}
         >
           <td className="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
@@ -73,7 +73,7 @@ export default function NewParcelTable(props: NewParcelTableProps) {
                 <Image className="h-10 w-10 rounded-full" src={avatar} alt="" />
               </div>
               <div className="ml-4">
-                <div className="select-none text-sm dark:text-gray-100 font-medium text-gray-900">
+                <div className="select-none flex text-sm dark:text-gray-100 font-medium text-gray-900">
                   {parcel.name}
                 </div>
                 <div className="select-all text-sm text-gray-500 dark:text-gray-100">
@@ -88,7 +88,7 @@ export default function NewParcelTable(props: NewParcelTableProps) {
                 <Image className="h-10 w-10" src={parcelImage} alt="" />
               </div>
               <div className="ml-4">
-                <div className="select-all text-sm font-medium dark:text-gray-100 text-gray-900">
+                <div className="select-all flex text-sm font-medium dark:text-gray-100 text-gray-900">
                   {parcel.code}
                 </div>
 
@@ -151,21 +151,11 @@ export default function NewParcelTable(props: NewParcelTableProps) {
 
   //montagem da tabela
   return (
-    <div className="flex flex-col">
-      <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-6">
-        <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-          <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-            <table className="w-full divide-y divide-gray-200">
-              <thead className="bg-violet-500 select-none">
-                {renderingHeader()}
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {renderingData()}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
+    <table className="w-full divide-y divide-gray-200 rounded-xl overflow-hidden">
+      <thead className="">{renderingHeader()}</thead>
+      <tbody className="bg-white divide-y divide-gray-200">
+        {renderingData()}
+      </tbody>
+    </table>
   );
 }
