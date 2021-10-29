@@ -27,13 +27,13 @@ export default function ParcelForm(props: ParcelFormProps) {
   );
   const [parcelNote, setParcelNote] = useState(props.parcel?.note ?? '');
   return (
-    <div className="md:grid md:grid-cols-4 md:gap-6">
-      <div className="mt-20 w-full">
+    <div className="flex items-center justify-start">
+      <div className="hidden md:block md:w-1/2 lg:w-1/2">
         <Image src={illu1} alt="" />
       </div>
 
-      <div className="mt-5 md:mt-0">
-        <div className="px-4 py-5 bg-gray-50 dark:bg-gray-700 sm:p-6">
+      <div className="m-1 w-full md:w-1/2 lg:w-1/4">
+        <div className="px-4 py-5 bg-white dark:bg-gray-700 sm:p-6 rounded-md">
           <Input
             text="Nome na Encomenda"
             value={parcelName}
@@ -83,7 +83,7 @@ export default function ParcelForm(props: ParcelFormProps) {
           />
 
           <Button
-            className="mt-4 mr-2 transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-emerald-500 hover:bg-emerald-500 transform hover:-translate-y-1 hover:scale-110"
+            className="mt-4 mr-2 transition duration-500 ease-in-out dark:bg-gray-600 dark:hover:bg-emerald-500 hover:bg-emerald-500 transform hover:-translate-y-1 hover:scale-110"
             onClick={() =>
               props.onChange?.(
                 new Parcel(
@@ -101,7 +101,7 @@ export default function ParcelForm(props: ParcelFormProps) {
             {parcelId ? 'Atualizar' : 'Incluir'}{' '}
           </Button>
           <Button
-            className="transition duration-500 ease-in-out bg-purple-900 dark:bg-gray-600 dark:hover:bg-rose-500 hover:bg-rose-400 transform hover:-translate-y-1 hover:scale-110"
+            className="transition duration-500 ease-in-out dark:bg-gray-600 dark:hover:bg-rose-500 hover:bg-rose-400 transform hover:-translate-y-1 hover:scale-110"
             onClick={props.cancelled}
           >
             Cancelar

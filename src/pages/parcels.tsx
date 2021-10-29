@@ -23,7 +23,7 @@ export default function Parcels() {
         <>
           <div className="flex justify-start">
             <Button
-              className="mb-1 ml-2 transition duration-500 ease-in-out bg-violet-500 dark:bg-gray-600 dark:hover:bg-emerald-500 hover:bg-emerald-500 transform hover:-translate-y-1 hover:scale-110"
+              className="mb-1 ml-2 transition duration-500 ease-in-out bg-violet-500 dark:bg-gray-600 dark:hover:bg-emerald-500 hover:bg-emerald-500"
               onClick={newParcel}
             >
               {IconAdd}
