@@ -31,7 +31,7 @@ export default function Auth() {
   }
 
   return (
-    <div className="flex h-screen items-center justify-center">
+    <div className="flex h-screen items-center justify-center bg-gradient-to-r from-rose-100 to-teal-100">
       <div className="hidden md:block md:w-1/2 lg:w-2/3">
         <Image
           src={logo}

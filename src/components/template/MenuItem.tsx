@@ -12,7 +12,7 @@ export default function MenuItem(props: MenuItemProps) {
   function linkRendering() {
     return (
       <a
-        className={`flex flex-col justify-center items-center h-20 w-20  text-gray-200 dark:text-gray-200 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ${props.className}`}
+        className={`flex flex-col justify-center items-center h-20 w-20 text-gray-200 dark:text-gray-200 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ${props.className}`}
       >
         {props.icon}
         <span className={`text-xs font-medium`}>{props.text}</span>

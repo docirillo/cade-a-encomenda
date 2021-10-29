@@ -12,7 +12,7 @@ export default function ChangeThemeButton(props: ChangeThemeButtonProps) {
       className={`hidden sm:flex items-center bg-gradient-to-r from-yellow-200 to-yellow-600 w-14 lg:w-24 h-10 mr-4 cursor-pointer p-1 rounded-full`}
     >
       <div
-        className={`flex items-center justify-center bg-white text-yellow-600 w-8 h-8 rounded-full hover:animate-bounce`}
+        className={`flex items-center justify-center bg-white text-yellow-600 w-8 h-8 rounded-full hover:animate-spin`}
       >
         {IconSun(8)}
       </div>

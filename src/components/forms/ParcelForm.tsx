@@ -33,7 +33,7 @@ export default function ParcelForm(props: ParcelFormProps) {
       </div>
 
       <div className="mt-5 md:mt-0">
-        <div className="px-4 py-5 bg-violet-50 dark:bg-gray-700 sm:p-6">
+        <div className="px-4 py-5 bg-gray-50 dark:bg-gray-700 sm:p-6">
           <Input
             text="Nome na Encomenda"
             value={parcelName}

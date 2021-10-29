@@ -7,7 +7,7 @@ export default function SideBar() {
   const { logout } = useAuth();
 
   return (
-    <aside className="flex flex-col bg-gradient-to-t from-violet-400 via-indigo-500 to-violet-500 dark:from-gray-600 dark:via-gray-700 dark:to-gray-900">
+    <aside className="flex flex-col bg-indigo-500 dark:bg-gray-900">
       <div
         className={` flex flex-col items-center justify-center h-20 w-20
       `}
