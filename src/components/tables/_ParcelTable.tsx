@@ -4,13 +4,13 @@ import avatar from '../../../public/images/moradores/avatar1.png';
 import parcelImage from '../../../public/images/parcelImage.png';
 import { IconDelete, IconEdit } from '../icons';
 
-interface NewParcelTableProps {
+interface ParcelTableProps {
   parcels: Parcel[];
   parcelSelected?: (parcel: Parcel) => void;
   parcelDeleted?: (parcel: Parcel) => void;
 }
 
-export default function NewParcelTable(props: NewParcelTableProps) {
+export default function ParcelTable(props: ParcelTableProps) {
   const showActions = props.parcelDeleted || props.parcelSelected;
 
   //funcao para renderizar o cabecalho da tabela
@@ -19,25 +19,25 @@ export default function NewParcelTable(props: NewParcelTableProps) {
       <tr className="dark:bg-gray-700">
         <th
           scope="col"
-          className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"
+          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-purple-100 uppercase tracking-wider"
         >
           Nome na Encomenda
         </th>
         <th
           scope="col"
-          className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"
+          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-purple-100 uppercase tracking-wider"
         >
           Código da Encomenda
         </th>
         <th
           scope="col"
-          className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"
+          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-purple-100 uppercase tracking-wider"
         >
           Já Retirado?
         </th>
         <th
           scope="col"
-          className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"
+          className="dark:text-gray-100 px-6 py-3 text-left text-xs font-medium text-purple-100 uppercase tracking-wider"
         >
           Observações
         </th>
@@ -45,7 +45,7 @@ export default function NewParcelTable(props: NewParcelTableProps) {
         {showActions ? (
           <th
             scope="col"
-            className="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell"
+            className="dark:text-gray-100 px-6 py-3 text-xs font-medium text-purple-100 uppercase tracking-wider"
           >
             Ações
           </th>
@@ -63,11 +63,11 @@ export default function NewParcelTable(props: NewParcelTableProps) {
           key={parcel.code}
           className={`${
             i % 2 === 0
-              ? 'bg-white dark:bg-gray-700 lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0'
-              : 'bg-gray-100 dark:bg-gray-600 lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0'
+              ? 'bg-white dark:bg-gray-700'
+              : 'bg-gray-100 dark:bg-gray-600'
           }`}
         >
-          <td className="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+          <td className="px-6 py-4 whitespace-nowrap">
             <div className="flex items-center">
               <div className="flex-shrink-0 h-12 w-12">
                 <Image className="h-10 w-10 rounded-full" src={avatar} alt="" />
@@ -82,7 +82,7 @@ export default function NewParcelTable(props: NewParcelTableProps) {
               </div>
             </div>
           </td>
-          <td className="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+          <td className="px-6 py-4 whitespace-nowrap">
             <div className="flex items-center">
               <div className="flex-shrink-0 h-12 w-12">
                 <Image className="h-10 w-10" src={parcelImage} alt="" />
@@ -91,7 +91,6 @@ export default function NewParcelTable(props: NewParcelTableProps) {
                 <div className="select-all text-sm font-medium dark:text-gray-100 text-gray-900">
                   {parcel.code}
                 </div>
-
                 <div className="select-none text-sm dark:text-gray-100 text-gray-500">
                   <span>Bloco: {parcel.building} </span>
                   <span>Apto: {parcel.apartment} </span>
@@ -99,19 +98,13 @@ export default function NewParcelTable(props: NewParcelTableProps) {
               </div>
             </div>
           </td>
-          <td className="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+          <td className="px-12 py-4 whitespace-nowrap">
             <div className="select-none	text-sm dark:text-gray-100 text-gray-900">
-              <span className="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                Retirado?
-              </span>
               {parcel.parcelStatus}
             </div>
           </td>
-          <td className="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+          <td className="px-6 py-4 whitespace-nowrap">
             <div className="select-all	text-sm dark:text-gray-100 text-gray-900">
-              <span className="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
-                Info
-              </span>
               {parcel.note}
             </div>
           </td>
@@ -123,11 +116,11 @@ export default function NewParcelTable(props: NewParcelTableProps) {
   //funcao para renderizar as acoes da tabela
   function renderingActions(parcel: Parcel) {
     return (
-      <td className="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static justify-center px-6 py-4 whitespace-nowrap text-sm font-medium">
+      <td className="flex justify-center px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
         {props.parcelSelected ? (
           <button
             onClick={() => props.parcelSelected?.(parcel)}
-            className={`flex-row justify-center items-center text-blue-600 dark:text-blue-600 rounded-full hover:bg-blue-100 p-2 m-1`}
+            className={`flex justify-center items-center text-blue-600 dark:text-blue-600 rounded-full hover:bg-blue-100 p-2 m-1`}
           >
             {IconEdit}
           </button>
@@ -138,7 +131,7 @@ export default function NewParcelTable(props: NewParcelTableProps) {
         {props.parcelDeleted ? (
           <button
             onClick={() => props.parcelDeleted?.(parcel)}
-            className={`flex-row justify-center items-center text-red-500 rounded-full hover:bg-red-100 p-2 m-1`}
+            className={`flex justify-center items-center text-red-500 rounded-full hover:bg-red-100 p-2 m-1`}
           >
             {IconDelete}
           </button>
