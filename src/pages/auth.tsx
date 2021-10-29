@@ -31,7 +31,7 @@ export default function Auth() {
   }
 
   return (
-    <div className="flex h-screen items-center justify-center bg-gradient-to-r from-rose-100 to-teal-100">
+    <div className="flex h-screen items-center justify-center bg-gradient-to-t from-green-300 via-blue-500 to-purple-600">
       <div className="hidden md:block md:w-1/2 lg:w-2/3">
         <Image
           src={logo}
@@ -42,7 +42,7 @@ export default function Auth() {
         />
       </div>
       <div className="m-10 md:w-1/2 w-full lg:w-1/3">
-        <h1 className={`text-3xl font-bold mb-5`}>
+        <h1 className={`text-3xl font-bold mb-5 text-white`}>
           {mode === 'login'
             ? 'Entre com a sua Conta'
             : 'Cadastre-se no Cadê a Encomenda?'}
@@ -89,22 +89,22 @@ export default function Auth() {
         </button>
 
         {mode === 'login' ? (
-          <p className="mt-8">
+          <p className="mt-8 text-white">
             Este é seu primeiro acesso?
             <a
               onClick={() => setMode('register')}
-              className={`text-blue-500 hover:text-blue-700 font-semibold cursor-pointer`}
+              className={`text-blue-700 hover:text-blue-700 font-semibold cursor-pointer`}
             >
               {' '}
               Crie sua Conta
             </a>
           </p>
         ) : (
-          <p className="mt-8">
+          <p className="mt-8 text-white">
             Já possui cadastro?
             <a
               onClick={() => setMode('login')}
-              className={`text-blue-500 hover:text-blue-700 font-semibold cursor-pointer`}
+              className={`text-blue-700 hover:text-blue-700 font-semibold cursor-pointer`}
             >
               {' '}
               Entre com as suas Credenciais

@@ -10,7 +10,7 @@ interface AuthInputProps {
 export default function AuthInput(props: AuthInputProps) {
   return props.noRenderingWhen ? null : (
     <div className="flex flex-col mt-4">
-      <label>{props.label}</label>
+      <label className="text-white">{props.label}</label>
       <input
         type={props.type ?? 'text'}
         value={props.value}
