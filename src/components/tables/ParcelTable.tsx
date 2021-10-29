@@ -101,7 +101,7 @@ export default function NewParcelTable(props: NewParcelTableProps) {
           </td>
           <td className="w-full lg:w-auto p-3 text-gray-800 text-center block lg:table-cell relative lg:static">
             <div className="select-none	text-sm dark:text-gray-100 text-gray-900">
-              <span className="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+              <span className="lg:hidden absolute rounded-r-md top-0 left-0 bg-indigo-200 dark:bg-gray-800 px-2 py-1 text-xs font-bold uppercase">
                 Entregue?
               </span>
               {parcel.parcelStatus}
@@ -109,7 +109,7 @@ export default function NewParcelTable(props: NewParcelTableProps) {
           </td>
           <td className="w-full lg:w-auto p-3 text-gray-800 text-center block lg:table-cell relative lg:static">
             <div className="select-all text-sm dark:text-gray-100 text-gray-900">
-              <span className="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">
+              <span className="lg:hidden absolute rounded-r-md top-0 left-0 bg-indigo-200 dark:bg-gray-800 px-2 py-1 text-xs font-bold uppercase">
                 Nota:
               </span>
               {parcel.note}
