@@ -18,7 +18,7 @@ export default function Parcels() {
   } = useParcels();
 
   return (
-    <Layout title="Encomendas" subtitle="Consulte e Cadastre Novas Encomendas">
+    <Layout title="Encomendas" subtitle="">
       {tableVisible ? (
         <>
           <div className="flex justify-start">

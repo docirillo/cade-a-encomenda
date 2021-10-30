@@ -16,7 +16,7 @@ export default function NewParcelTable(props: NewParcelTableProps) {
   //funcao para renderizar o cabecalho da tabela
   function renderingHeader() {
     return (
-      <tr className="bg-gray-200 dark:bg-cyan-900">
+      <tr className="bg-gray-200 dark:bg-gray-700">
         <th
           scope="col"
           className="p-3 font-bold uppercase text-gray-600 dark:text-white  hidden lg:table-cell"
@@ -153,7 +153,7 @@ export default function NewParcelTable(props: NewParcelTableProps) {
   return (
     <table className="w-full divide-y divide-gray-200 rounded-xl overflow-hidden">
       <thead className="">{renderingHeader()}</thead>
-      <tbody className="bg-white divide-y divide-gray-200">
+      <tbody className="bg-white dark:bg-gray-600 divide-y divide-gray-200">
         {renderingData()}
       </tbody>
     </table>
