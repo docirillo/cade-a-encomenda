@@ -14,7 +14,7 @@ export default function Layout(props: LayoutProps) {
   const { theme } = useAppData();
   return (
     <ForceAuth>
-      <div className={` ${theme} flex md:h-screen md:w-screen mx-auto`}>
+      <div className={` ${theme} flex mx-auto md:h-screen`}>
         <SideBar />
         <div
           className={`select-none flex flex-col p-7 bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-400 dark:from-black dark:via-gray-900 dark:to-gray-800 w-full`}
