@@ -1,5 +1,11 @@
 import useAuth from '../../data/hooks/useAuth';
-import { IconParcels, IconHome, IconLogout, IconSettings } from '../icons';
+import {
+  IconParcels,
+  IconHome,
+  IconLogout,
+  IconSettings,
+  IconServices,
+} from '../icons';
 import Logo from './Logo';
 import MenuItem from './MenuItem';
 
@@ -17,6 +23,7 @@ export default function SideBar() {
       <ul className="">
         <MenuItem url="/" text="Home" icon={IconHome} />
         <MenuItem url="/parcels" text="Encomendas" icon={IconParcels} />
+        <MenuItem url="/services" text="Serviços" icon={IconServices} />
         <MenuItem url="/settings" text="Ajustes" icon={IconSettings} />
       </ul>
       <ul>

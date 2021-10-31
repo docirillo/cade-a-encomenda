@@ -27,7 +27,7 @@ export default function ParcelForm(props: ParcelFormProps) {
   );
   const [parcelNote, setParcelNote] = useState(props.parcel?.note ?? '');
   return (
-    <div className="flex items-center justify-start">
+    <div className="flex  flex-initial items-center justify-start">
       <div className="hidden md:block md:w-1/2 lg:w-1/2">
         <Image src={illu1} alt="" />
       </div>

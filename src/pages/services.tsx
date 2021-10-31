@@ -1,8 +1,8 @@
 import Layout from '../components/template/Layout';
 
-export default function Home() {
+export default function Services() {
   return (
-    <Layout title="Home" subtitle="">
+    <Layout title="Serviços" subtitle="">
       <div className="flex justify-center items-center">
         <div className="container mx-auto p-12 bg-gray-100 rounded-xl">
           <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 space-y-4 sm:space-y-0">

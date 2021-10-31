@@ -14,10 +14,10 @@ export default function Layout(props: LayoutProps) {
   const { theme } = useAppData();
   return (
     <ForceAuth>
-      <div className={` ${theme} flex mx-auto md:h-screen`}>
+      <div className={` ${theme} flex w-screen h-screen`}>
         <SideBar />
         <div
-          className={`select-none flex flex-col p-7 bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-400 dark:from-black dark:via-gray-900 dark:to-gray-800 w-full`}
+          className={`select-none flex flex-col p-7 bg-gradient-to-r from-gray-200 via-gray-200 to-gray-200 dark:from-black dark:via-gray-900 dark:to-gray-900 w-full`}
         >
           <Header title={props.title} subtitle={props.subtitle} />
           <Content>{props.children}</Content>

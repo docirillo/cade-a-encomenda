@@ -63,8 +63,8 @@ export default function NewParcelTable(props: NewParcelTableProps) {
           key={parcel.id}
           className={`${
             i % 2 === 0
-              ? ' bg-gray-100 dark:bg-gray-900 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0'
-              : ' bg-gray-50 dark:bg-gray-700 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0'
+              ? 'bg-gray-100 dark:bg-gray-900 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0'
+              : 'bg-gray-50 dark:bg-gray-700 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0'
           }`}
         >
           <td className="w-full lg:w-auto p-3 text-gray-800 text-center block lg:table-cell relative lg:static">
@@ -99,7 +99,7 @@ export default function NewParcelTable(props: NewParcelTableProps) {
               </div>
             </div>
           </td>
-          <td className="w-full lg:w-auto p-3 text-gray-800 text-center block lg:table-cell relative lg:static">
+          <td className="hidden w-full lg:w-auto p-3 text-gray-800 text-center md-block lg:table-cell relative lg:static">
             <div className="select-none	text-sm dark:text-gray-100 text-gray-900">
               <span className="lg:hidden absolute rounded-r-md top-0 left-0 bg-indigo-200 dark:bg-gray-800 px-2 py-1 text-xs font-bold uppercase">
                 Entregue?
@@ -107,7 +107,7 @@ export default function NewParcelTable(props: NewParcelTableProps) {
               {parcel.parcelStatus}
             </div>
           </td>
-          <td className="w-full lg:w-auto p-3 text-gray-800 text-center block lg:table-cell relative lg:static">
+          <td className="hidden w-full lg:w-auto p-3 text-gray-800 text-center md-block lg:table-cell relative lg:static">
             <div className="select-all text-sm dark:text-gray-100 text-gray-900">
               <span className="lg:hidden absolute rounded-r-md top-0 left-0 bg-indigo-200 dark:bg-gray-800 px-2 py-1 text-xs font-bold uppercase">
                 Nota:
