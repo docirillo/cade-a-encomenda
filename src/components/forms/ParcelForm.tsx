@@ -3,8 +3,6 @@ import Parcel from '../../core/Parcel';
 import Input from './inputs/Input';
 import Button from './buttons/Button';
 import TextArea from './inputs/TextArea';
-import Image from 'next/image';
-import illu1 from '../../../public/images/illu1.svg';
 
 interface ParcelFormProps {
   parcel: Parcel;
@@ -28,11 +26,7 @@ export default function ParcelForm(props: ParcelFormProps) {
   const [parcelNote, setParcelNote] = useState(props.parcel?.note ?? '');
   return (
     <div className="flex  flex-initial items-center justify-start">
-      <div className="hidden md:block md:w-1/2 lg:w-1/2">
-        <Image src={illu1} alt="" />
-      </div>
-
-      <div className="m-1 w-full md:w-1/2 lg:w-1/4">
+      <div className="m-1 w-full">
         <div className="px-4 py-5 bg-white dark:bg-gray-700 sm:p-6 rounded-md">
           <Input
             text="Nome na Encomenda"

@@ -2,11 +2,9 @@ import { useEffect, useState } from 'react';
 import Parcel from '../../core/Parcel';
 import ParcelRepository from '../../core/ParcelRepository';
 import ParcelCollection from '../../db/ParcelCollection';
-import useTableOrForm from './useTableOrForm';
 
 export default function useParcels() {
   const repo: ParcelRepository = new ParcelCollection();
-  const { tableVisible, showTable, showForm } = useTableOrForm();
   const [parcel, setParcel] = useState<Parcel>(Parcel.empty());
   const [parcels, setParcels] = useState<Parcel[]>([]);
 
@@ -16,14 +14,12 @@ export default function useParcels() {
   function getAll() {
     repo.getAll().then((parcels) => {
       setParcels(parcels);
-      showTable();
     });
   }
 
-  //funcao para atualizar parcel e deixar form visivel
+  //funcao para atualizar parcel
   function getParcel(parcel: Parcel) {
     setParcel(parcel);
-    showForm();
   }
 
   //funcao para apagar Parcel
@@ -35,7 +31,6 @@ export default function useParcels() {
   //funcao para criar novo Parcel
   function newParcel() {
     setParcel(Parcel.empty());
-    showForm();
   }
 
   //funcao para salvar Parcel
@@ -51,8 +46,7 @@ export default function useParcels() {
     saveParcel,
     deleteParcel,
     getParcel,
+    setParcel,
     getAll,
-    tableVisible,
-    showTable,
   };
 }
