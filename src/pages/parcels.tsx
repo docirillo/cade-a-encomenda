@@ -12,29 +12,15 @@ export default function Parcels() {
   const {
     parcel,
     parcels,
+    isOpen,
     newParcel,
     setParcel,
     getParcel,
     deleteParcel,
     saveParcel,
+    closeModal,
+    openModal,
   } = useParcels();
-
-  let [isOpen, setIsOpen] = useState(false);
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  function newParcelModal() {
-    newParcel;
-    setParcel(Parcel.empty());
-    setIsOpen(true);
-  }
-
-  function getParcelModal(parcel: Parcel) {
-    getParcel(parcel);
-    setIsOpen(true);
-  }
 
   return (
     <Layout title="Encomendas" subtitle="">
@@ -42,7 +28,7 @@ export default function Parcels() {
         <div className="flex justify-start">
           <Button
             className="mb-1 ml-2 transition duration-500 ease-in-out bg-violet-500 dark:bg-gray-600 dark:hover:bg-emerald-500 hover:bg-emerald-500"
-            onClick={newParcelModal}
+            onClick={newParcel}
           >
             {IconAdd}
           </Button>
@@ -104,7 +90,7 @@ export default function Parcels() {
         </Transition>
         <ParcelTable
           parcels={parcels}
-          parcelSelected={getParcelModal}
+          parcelSelected={getParcel}
           parcelDeleted={deleteParcel}
         />
       </>

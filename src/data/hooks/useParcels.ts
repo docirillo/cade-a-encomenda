@@ -7,10 +7,19 @@ export default function useParcels() {
   const repo: ParcelRepository = new ParcelCollection();
   const [parcel, setParcel] = useState<Parcel>(Parcel.empty());
   const [parcels, setParcels] = useState<Parcel[]>([]);
+  let [isOpen, setIsOpen] = useState(false);
 
   useEffect(getAll, []);
 
-  //funcao para obter todos e deixar tabela visivel
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  //funcao para obter todos
   function getAll() {
     repo.getAll().then((parcels) => {
       setParcels(parcels);
@@ -20,6 +29,7 @@ export default function useParcels() {
   //funcao para atualizar parcel
   function getParcel(parcel: Parcel) {
     setParcel(parcel);
+    setIsOpen(true);
   }
 
   //funcao para apagar Parcel
@@ -31,11 +41,13 @@ export default function useParcels() {
   //funcao para criar novo Parcel
   function newParcel() {
     setParcel(Parcel.empty());
+    setIsOpen(true);
   }
 
   //funcao para salvar Parcel
   async function saveParcel(parcel: Parcel) {
     await repo.save(parcel);
+    setIsOpen(false);
     getAll();
   }
 
@@ -48,5 +60,8 @@ export default function useParcels() {
     getParcel,
     setParcel,
     getAll,
+    closeModal,
+    openModal,
+    isOpen,
   };
 }
