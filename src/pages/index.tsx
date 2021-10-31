@@ -1,18 +1,22 @@
 import Layout from '../components/template/Layout';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <Layout title="Home" subtitle="">
       <div className="flex justify-center items-center">
-        <div className="container mx-auto p-12 bg-gray-100 rounded-xl">
+        <div className="container mx-auto p-12 bg-gray-100 dark:bg-gray-900 rounded-xl">
           <div className="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 space-y-4 sm:space-y-0">
-            <div className="bg-white">
+            <div className="bg-white dark:bg-gray-700">
               <div>
                 <div className="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
                   <div>
-                    <img
+                    <Image
                       className="w-full"
                       src="https://i.imgur.com/lmYYa2s.png"
+                      alt=""
+                      width="500px"
+                      height="358px"
                     />
                     <div className="px-4 py-2">
                       <h1 className="text-xl font-gray-700 font-bold">
@@ -41,7 +45,7 @@ export default function Home() {
                             />
                           </svg>
                         </span>
-                        <h3 className="text-lg text-gray-600 font-semibold mb-2">
+                        <h3 className="text-lg text-gray-600 dark:text-gray-200 font-semibold mb-2">
                           New York
                         </h3>
                       </div>
@@ -61,13 +65,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white">
+            <div className="bg-white dark:bg-gray-700">
               <div>
                 <div className="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
                   <div>
-                    <img
+                    <Image
                       className="w-full"
                       src="https://i.imgur.com/csPYilq.png"
+                      alt=""
+                      width="500px"
+                      height="358px"
                     />
                     <div className="px-4 py-2">
                       <h1 className="text-xl font-gray-700 font-bold">
@@ -96,7 +103,7 @@ export default function Home() {
                             />
                           </svg>
                         </span>
-                        <h3 className="text-lg text-gray-600 font-semibold mb-2">
+                        <h3 className="text-lg text-gray-600 dark:text-gray-200 font-semibold mb-2">
                           New York
                         </h3>
                       </div>
@@ -116,13 +123,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white">
+            <div className="bg-white dark:bg-gray-700">
               <div>
                 <div className="shadow-lg hover:shadow-xl transform transition duration-500 hover:scale-105">
                   <div>
-                    <img
+                    <Image
                       className="w-full"
                       src="https://i.imgur.com/chvO4cX.png"
+                      alt=""
+                      width="500px"
+                      height="358px"
                     />
                     <div className="px-4 py-2">
                       <h1 className="text-xl font-gray-700 font-bold">
@@ -151,7 +161,7 @@ export default function Home() {
                             />
                           </svg>
                         </span>
-                        <h3 className="text-lg text-gray-600 font-semibold mb-2">
+                        <h3 className="text-lg text-gray-600 dark:text-gray-200 font-semibold mb-2">
                           New York
                         </h3>
                       </div>
