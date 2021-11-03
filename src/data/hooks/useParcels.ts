@@ -10,11 +10,11 @@ export default function useParcels() {
   let [isOpen, setIsOpen] = useState(false);
 
   useEffect(getAll, []);
-
+  //funcao para fechar modal
   function closeModal() {
     setIsOpen(false);
   }
-
+  //funcao para abrir modal
   function openModal() {
     setIsOpen(true);
   }

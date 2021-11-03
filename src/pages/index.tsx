@@ -1,5 +1,8 @@
 import Layout from '../components/template/Layout';
 import Image from 'next/image';
+import Noticia1 from '../../public/images/noticias/noticia1.jpg';
+import Noticia2 from '../../public/images/noticias/noticia2.jpg';
+import Noticia3 from '../../public/images/noticias/noticia3.jpg';
 
 export default function Home() {
   return (
@@ -13,14 +16,14 @@ export default function Home() {
                   <div>
                     <Image
                       className="w-full"
-                      src="https://i.imgur.com/lmYYa2s.png"
+                      src={Noticia1}
                       alt=""
                       width="500px"
                       height="358px"
                     />
                     <div className="px-4 py-2">
                       <h1 className="text-xl font-gray-700 font-bold">
-                        Papież gigant
+                        Missa da Matriz
                       </h1>
                       <div className="flex space-x-2 mt-2">
                         <span>
@@ -46,15 +49,11 @@ export default function Home() {
                           </svg>
                         </span>
                         <h3 className="text-lg text-gray-600 dark:text-gray-200 font-semibold mb-2">
-                          New York
+                          Igreja Matriz de Itu
                         </h3>
                       </div>
                       <p className="text-sm tracking-normal">
-                        Częstochowski pomnik Jana Pawła II wyjątkowo
-                        interesująco wpisuje się w poprzemysłowy krajobraz tego
-                        miasta o mocnych lewicowych, robotniczych i
-                        socjalistycznych tradycjach. Powstały w 2013 roku,
-                        uchodzi za najwyższego Karola Wojtyłę w Polsce.
+                        Essa semana tem Missa na Igreja Matriz de Itu!
                       </p>
                       <button className="mt-12 w-full text-center text-gray-100 bg-indigo-400 py-2 rounded-lg">
                         Saiba Mais...
@@ -71,14 +70,14 @@ export default function Home() {
                   <div>
                     <Image
                       className="w-full"
-                      src="https://i.imgur.com/csPYilq.png"
+                      src={Noticia2}
                       alt=""
                       width="500px"
                       height="358px"
                     />
                     <div className="px-4 py-2">
                       <h1 className="text-xl font-gray-700 font-bold">
-                        Papież gigant
+                        Orelhão Solidário
                       </h1>
                       <div className="flex space-x-2 mt-2">
                         <span>
@@ -104,15 +103,12 @@ export default function Home() {
                           </svg>
                         </span>
                         <h3 className="text-lg text-gray-600 dark:text-gray-200 font-semibold mb-2">
-                          New York
+                          Orelhão de Itu
                         </h3>
                       </div>
                       <p className="text-sm tracking-normal">
-                        Częstochowski pomnik Jana Pawła II wyjątkowo
-                        interesująco wpisuje się w poprzemysłowy krajobraz tego
-                        miasta o mocnych lewicowych, robotniczych i
-                        socjalistycznych tradycjach. Powstały w 2013 roku,
-                        uchodzi za najwyższego Karola Wojtyłę w Polsce.
+                        Do dia 20 ao dia 25 haverá evento solidário em frente ao
+                        Orelhão de Itu!
                       </p>
                       <button className="mt-12 w-full text-center text-gray-100 bg-indigo-400 py-2 rounded-lg">
                         Saiba Mais...
@@ -129,14 +125,14 @@ export default function Home() {
                   <div>
                     <Image
                       className="w-full"
-                      src="https://i.imgur.com/chvO4cX.png"
+                      src={Noticia3}
                       alt=""
                       width="500px"
                       height="358px"
                     />
                     <div className="px-4 py-2">
                       <h1 className="text-xl font-gray-700 font-bold">
-                        Papież gigant
+                        Concurso de Fotos
                       </h1>
                       <div className="flex space-x-2 mt-2">
                         <span>
@@ -162,15 +158,12 @@ export default function Home() {
                           </svg>
                         </span>
                         <h3 className="text-lg text-gray-600 dark:text-gray-200 font-semibold mb-2">
-                          New York
+                          Praça dos Exageros
                         </h3>
                       </div>
                       <p className="text-sm tracking-normal">
-                        Częstochowski pomnik Jana Pawła II wyjątkowo
-                        interesująco wpisuje się w poprzemysłowy krajobraz tego
-                        miasta o mocnych lewicowych, robotniczych i
-                        socjalistycznych tradycjach. Powstały w 2013 roku,
-                        uchodzi za najwyższego Karola Wojtyłę w Polsce.
+                        Em dezembro prepare-se para o concurso de fotos
+                        criativas na Praça dos Exageros! Se inscreva!
                       </p>
                       <button className="mt-12 w-full text-center text-gray-100 bg-indigo-400 py-2 rounded-lg">
                         Saiba Mais...
