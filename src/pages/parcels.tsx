@@ -3,7 +3,7 @@ import ParcelForm from '../components/forms/ParcelForm';
 import ParcelTable from '../components/tables/ParcelTable';
 import Layout from '../components/template/Layout';
 import useParcels from '../data/hooks/useParcels';
-import { IconAdd } from '../components/icons';
+import { IconAdd, IconSearch } from '../components/icons';
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import Parcel from '../core/Parcel';
@@ -32,6 +32,18 @@ export default function Parcels() {
           >
             {IconAdd}
           </Button>
+
+          <div className="flex relative md:w-1/6 max-w-md">
+            <input
+              className="border-2 border-primary bg-red transition h-12 px-5 pr-16 rounded-md focus:outline-none w-full text-black dark:bg-gray-800 text-lg "
+              type="search"
+              name="search"
+              placeholder="Procurar Encomenda"
+            />
+            <button type="submit" className="absolute right-2 top-3 mr-4">
+              {IconSearch}
+            </button>
+          </div>
         </div>
 
         <Transition appear show={isOpen} as={Fragment}>

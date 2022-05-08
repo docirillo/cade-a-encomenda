@@ -24,7 +24,7 @@ export default function SideBar() {
         <MenuItem url="/" text="Home" icon={IconHome} />
         <MenuItem url="/parcels" text="Encomendas" icon={IconParcels} />
         <MenuItem url="/services" text="Serviços" icon={IconServices} />
-        <MenuItem url="/settings" text="Ajustes" icon={IconSettings} />
+        {/* <MenuItem url="/settings" text="Ajustes" icon={IconSettings} /> */}
       </ul>
       <ul>
         <MenuItem
